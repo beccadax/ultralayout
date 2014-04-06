@@ -16,6 +16,11 @@
 		84B2126418F216E100235C3B /* libUltraLayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B2124C18F216E100235C3B /* libUltraLayout.a */; };
 		84B2126A18F216E100235C3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84B2126818F216E100235C3B /* InfoPlist.strings */; };
 		84B2126C18F216E100235C3B /* UltraLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2126B18F216E100235C3B /* UltraLayoutTests.m */; };
+		84B2127718F2170300235C3B /* UIView+ULInitExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2127618F2170300235C3B /* UIView+ULInitExtensions.m */; };
+		84B2127A18F218FA00235C3B /* ULLayoutAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2127918F218FA00235C3B /* ULLayoutAttribute.m */; };
+		84B2127D18F2197900235C3B /* NSLayoutConstraint+ULExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2127C18F2197900235C3B /* NSLayoutConstraint+ULExtensions.m */; };
+		84B2128018F21A1E00235C3B /* UIView+ULLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2127F18F21A1E00235C3B /* UIView+ULLayoutAttributes.m */; };
+		84B2128318F21AEC00235C3B /* UIView+ULLayoutExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2128218F21AEC00235C3B /* UIView+ULLayoutExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,16 @@
 		84B2126718F216E100235C3B /* UltraLayoutTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UltraLayoutTests-Info.plist"; sourceTree = "<group>"; };
 		84B2126918F216E100235C3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84B2126B18F216E100235C3B /* UltraLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UltraLayoutTests.m; sourceTree = "<group>"; };
+		84B2127518F2170300235C3B /* UIView+ULInitExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ULInitExtensions.h"; sourceTree = "<group>"; };
+		84B2127618F2170300235C3B /* UIView+ULInitExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ULInitExtensions.m"; sourceTree = "<group>"; };
+		84B2127818F218FA00235C3B /* ULLayoutAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ULLayoutAttribute.h; sourceTree = "<group>"; };
+		84B2127918F218FA00235C3B /* ULLayoutAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULLayoutAttribute.m; sourceTree = "<group>"; };
+		84B2127B18F2197900235C3B /* NSLayoutConstraint+ULExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+ULExtensions.h"; sourceTree = "<group>"; };
+		84B2127C18F2197900235C3B /* NSLayoutConstraint+ULExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+ULExtensions.m"; sourceTree = "<group>"; };
+		84B2127E18F21A1E00235C3B /* UIView+ULLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ULLayoutAttributes.h"; sourceTree = "<group>"; };
+		84B2127F18F21A1E00235C3B /* UIView+ULLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ULLayoutAttributes.m"; sourceTree = "<group>"; };
+		84B2128118F21AEC00235C3B /* UIView+ULLayoutExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ULLayoutExtensions.h"; sourceTree = "<group>"; };
+		84B2128218F21AEC00235C3B /* UIView+ULLayoutExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ULLayoutExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +127,8 @@
 			children = (
 				84B2125418F216E100235C3B /* UltraLayout.h */,
 				84B2125618F216E100235C3B /* UltraLayout.m */,
+				84B2128518F21EA200235C3B /* Common */,
+				84B2128418F21CD900235C3B /* iOS */,
 				84B2125218F216E100235C3B /* Supporting Files */,
 			);
 			path = UltraLayout;
@@ -141,6 +158,30 @@
 				84B2126818F216E100235C3B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84B2128418F21CD900235C3B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				84B2127518F2170300235C3B /* UIView+ULInitExtensions.h */,
+				84B2127618F2170300235C3B /* UIView+ULInitExtensions.m */,
+				84B2127E18F21A1E00235C3B /* UIView+ULLayoutAttributes.h */,
+				84B2127F18F21A1E00235C3B /* UIView+ULLayoutAttributes.m */,
+				84B2128118F21AEC00235C3B /* UIView+ULLayoutExtensions.h */,
+				84B2128218F21AEC00235C3B /* UIView+ULLayoutExtensions.m */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		84B2128518F21EA200235C3B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				84B2127B18F2197900235C3B /* NSLayoutConstraint+ULExtensions.h */,
+				84B2127C18F2197900235C3B /* NSLayoutConstraint+ULExtensions.m */,
+				84B2127818F218FA00235C3B /* ULLayoutAttribute.h */,
+				84B2127918F218FA00235C3B /* ULLayoutAttribute.m */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +228,7 @@
 		84B2124418F216E100235C3B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = UL;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Architechies;
 			};
@@ -224,6 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B2128018F21A1E00235C3B /* UIView+ULLayoutAttributes.m in Sources */,
+				84B2128318F21AEC00235C3B /* UIView+ULLayoutExtensions.m in Sources */,
+				84B2127D18F2197900235C3B /* NSLayoutConstraint+ULExtensions.m in Sources */,
+				84B2127718F2170300235C3B /* UIView+ULInitExtensions.m in Sources */,
+				84B2127A18F218FA00235C3B /* ULLayoutAttribute.m in Sources */,
 				84B2125718F216E100235C3B /* UltraLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

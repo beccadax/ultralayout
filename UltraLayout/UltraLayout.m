@@ -8,6 +8,3 @@
 
 #import "UltraLayout.h"
 
-@implementation UltraLayout
-
-@end

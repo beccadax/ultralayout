@@ -8,6 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UltraLayout : NSObject
+#import "NSLayoutConstraint+ULExtensions.h"
+#import "ULLayoutAttribute.h"
 
-@end
+#if TARGET_OS_IPHONE
+
+#import "UIView+ULInitExtensions.h"
+#import "UIView+ULLayoutAttributes.h"
+#import "UIView+ULLayoutExtensions.h"
+
+#else
+
+#error "Mac version not yet implemented"
+
+#endif
