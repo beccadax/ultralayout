@@ -26,21 +26,21 @@
 @property (readonly, assign, nonatomic) NSLayoutAttribute attribute;
 
 /// Returns a constraint relating this attribute and the other attribute provided in the specified fashion. The constraint is not automatically added.
-- (NSLayoutConstraint*)constraintForRelation:(NSLayoutRelation)relation toAttribute:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
+- (NSLayoutConstraint*)constraintForRelation:(NSLayoutRelation)relation toAttribute:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
 
 /// Returns a constraint forcing this attribute to match the other attribute with the specified properties. The constraint is not automatically added.
-- (NSLayoutConstraint*)constraintConstrainingTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
+- (NSLayoutConstraint*)constraintConstrainingTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
 /// Returns a constraint forcing this attribute to be less than or equal to the other attribute with the specified properties. The constraint is not automatically added.
-- (NSLayoutConstraint*)constraintConstrainingUpTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
+- (NSLayoutConstraint*)constraintConstrainingUpTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
 /// Returns a constraint forcing this attribute to be greater than or equal to the other attribute with the specified properties. The constraint is not automatically added.
-- (NSLayoutConstraint*)constraintConstrainingDownTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
+- (NSLayoutConstraint*)constraintConstrainingDownTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
 
 /// Constrains this attribute to match the other attribute with the specified properties. The constraint is automatically added.
-- (NSLayoutConstraint*)constrainTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
+- (NSLayoutConstraint*)constrainTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
 /// Constrains this attribute to be less than or equal to the other attribute with the specified properties. The constraint is automatically added.
-- (NSLayoutConstraint*)constrainUpTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
+- (NSLayoutConstraint*)constrainUpTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
 /// Constrains this attribute to be greater than or equal to the other attribute with the specified properties. The constraint is automatically added.
-- (NSLayoutConstraint*)constrainDownTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
+- (NSLayoutConstraint*)constrainDownTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
 
 /// Constrains this attribute to match the other attribute. The constraint is required, and is automatically added.
 - (NSLayoutConstraint*)constrainTo:(ULLayoutAttribute*)other;
@@ -60,11 +60,11 @@
 @property (readonly, nonatomic) ULLayoutAttribute * superviewAttribute;
 
 /// Constrains this attribute to match the equivalent superview attribute with the specified properties. The constraint is automatically added.
-- (NSLayoutConstraint *)constrainToSuperviewWithOffset:(CGFloat)offset priority:(UILayoutPriority)priority;
+- (NSLayoutConstraint *)constrainToSuperviewWithOffset:(CGFloat)offset priority:(ULLayoutPriority)priority;
 /// Constrains this attribute to be less than or equal to the equivalent superview attribute with the specified properties. The constraint is automatically added.
-- (NSLayoutConstraint *)constrainUpToSuperviewWithOffset:(CGFloat)offset priority:(UILayoutPriority)priority;
+- (NSLayoutConstraint *)constrainUpToSuperviewWithOffset:(CGFloat)offset priority:(ULLayoutPriority)priority;
 /// Constrains this attribute to be greater than or equal to the equivalent superview attribute with the specified properties. The constraint is automatically added.
-- (NSLayoutConstraint *)constrainDownToSuperviewWithOffset:(CGFloat)offset priority:(UILayoutPriority)priority;
+- (NSLayoutConstraint *)constrainDownToSuperviewWithOffset:(CGFloat)offset priority:(ULLayoutPriority)priority;
 
 /// Constrains this attribute to match the equivalent superview attribute. The constraint is required, and is automatically added.
 - (NSLayoutConstraint *)constrainToSuperview;

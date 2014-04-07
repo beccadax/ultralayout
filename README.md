@@ -31,7 +31,7 @@ And NSLayoutConstraint methods to easily add a constraint:
     [aConstraint add];  // Automatically decides a view to use
     [UIView animateWithDuration:0.5 animations:^{ [self.view layoutIfNeeded]; } completion:^{ [aConstraint remove]; }];
 
-Currently UltraLayout only supports iOS, but everything is in place to make a Mac version; it's a simple matter of programming to add the necessary categories to NSView.
+UltraLayout is available on both iOS and OS X, with an essentially identical API on both platforms.
 
 Isn't the name a bit much?
 -----------------------
