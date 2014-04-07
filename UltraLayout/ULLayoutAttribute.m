@@ -9,11 +9,16 @@
 #import "ULLayoutAttribute.h"
 
 #import "NSLayoutConstraint+ULExtensions.h"
+#import "ULLayoutItem.h"
 
 @implementation ULLayoutAttribute
 
 - (id)initWithItem:(id)item attribute:(NSLayoutAttribute)attr {
     if((self = [super init])) {
+        if([item isKindOfClass:ULLayoutItem.class]) {
+            item = [(ULLayoutItem*)item item];
+        }
+        
         _item = item;
         _attribute = attr;
     }
