@@ -49,13 +49,6 @@
 /// Constrains this attribute to be less than or equal to the other attribute. The constraint is required, and is automatically added.
 - (NSLayoutConstraint*)constrainDownTo:(ULLayoutAttribute*)other;
 
-/// Constrains this attribute to always match the given value. The constraint is required, and is automatically added.
-- (NSLayoutConstraint*)constrainToValue:(CGFloat)value;
-/// Constrains this attribute to be less than or equal to the given value. The constraint is required, and is automatically added.
-- (NSLayoutConstraint*)constrainUpToValue:(CGFloat)value;
-/// Constrains this attribute to be greater than or equal to the given value. The constraint is required, and is automatically added.
-- (NSLayoutConstraint*)constrainDownToValue:(CGFloat)value;
-
 /// Returns the matching attribute on the the superview.
 @property (readonly, nonatomic) ULLayoutAttribute * superviewAttribute;
 

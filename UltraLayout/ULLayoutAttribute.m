@@ -77,18 +77,6 @@
     return [self constrainDownTo:other offset:0.0 priority:ULLayoutPriorityRequired];
 }
 
-- (NSLayoutConstraint*)constrainToValue:(CGFloat)value {
-    return [self constrainTo:[self.class nonAttribute] offset:value priority:ULLayoutPriorityRequired];
-}
-
-- (NSLayoutConstraint*)constrainUpToValue:(CGFloat)value {
-    return [self constrainUpTo:[self.class nonAttribute] offset:value priority:ULLayoutPriorityRequired];
-}
-
-- (NSLayoutConstraint*)constrainDownToValue:(CGFloat)value {
-    return [self constrainDownTo:[self.class nonAttribute] offset:value priority:ULLayoutPriorityRequired];
-}
-
 - (ULLayoutAttribute *)superviewAttribute {
     return [[ULLayoutAttribute alloc] initWithItem:[self.item superview] attribute:self.attribute];
 }
