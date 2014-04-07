@@ -6,11 +6,7 @@
 //  Copyright (c) 2014 Architechies. All rights reserved.
 //
 
-#if TARGET_OS_IPHONE
-#import <UIKit/UIKit.h>
-#else
-#import <Cocoa/Cocoa.h>
-#endif
+#import "AppKitOrUIKit.h"
 
 @interface ULLayoutAttribute : NSObject
 
