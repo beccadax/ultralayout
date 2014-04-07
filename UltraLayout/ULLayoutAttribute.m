@@ -35,20 +35,29 @@
     return constraint;
 }
 
-- (NSLayoutConstraint*)constraintForAttribute:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
+- (NSLayoutConstraint*)constraintConstrainingTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
     return [self constraintForRelation:NSLayoutRelationEqual toAttribute:other offset:offset priority:priority];
 }
 
+- (NSLayoutConstraint*)constraintConstrainingUpTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
+    return [self constraintForRelation:NSLayoutRelationLessThanOrEqual toAttribute:other offset:offset priority:priority];
+}
+
+- (NSLayoutConstraint*)constraintConstrainingDownTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
+    return [self constraintForRelation:NSLayoutRelationGreaterThanOrEqual toAttribute:other offset:offset priority:priority];
+
+}
+
 - (NSLayoutConstraint*)constrainTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
-    return [[self constraintForAttribute:other offset:offset priority:priority] add];
+    return [[self constraintConstrainingTo:other offset:offset priority:priority] add];
 }
 
 - (NSLayoutConstraint*)constrainUpTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
-    return [[self constraintForRelation:NSLayoutRelationLessThanOrEqual toAttribute:other offset:offset priority:priority] add];
+    return [[self constraintConstrainingUpTo:other offset:offset priority:priority] add];
 }
 
 - (NSLayoutConstraint*)constrainDownTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
-    return [[self constraintForRelation:NSLayoutRelationGreaterThanOrEqual toAttribute:other offset:offset priority:priority] add];
+    return [[self constraintConstrainingDownTo:other offset:offset priority:priority] add];
 }
 
 - (NSLayoutConstraint*)constrainTo:(ULLayoutAttribute*)other {
