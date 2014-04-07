@@ -1,5 +1,5 @@
 //
-//  ULLayoutAttributeSet.h
+//  ULItem.h
 //  UltraLayout
 //
 //  Created by Brent Royal-Gordon on 4/6/14.
@@ -8,22 +8,22 @@
 
 #import "AppKitOrUIKit.h"
 
-@class ULLayoutDimension;
-@class ULLayoutXPosition;
-@class ULLayoutYPosition;
+@class ULDimensionAttribute;
+@class ULXPositionAttribute;
+@class ULYPositionAttribute;
 
 /// 
-/// ULLayoutItem is used to construct ULLayoutAttributes for a particular view.
+/// ULItem is used to construct ULAttributes for a particular view.
 /// 
-/// A view's ULLayoutItem is accessed through its ul property. From the item, you can 
-/// access ULLayoutAttributes for the view's various NSLayoutAttributes. You can also 
+/// A view's ULItem is accessed through its ul property. From the item, you can 
+/// access ULAttributes for the view's various NSLayoutAttributes. You can also 
 /// use a small suite of methods to constrain it to other items in various common ways, 
 /// such as making the views sit next to each other or match some or all of their dimensions.
 /// 
-@interface ULLayoutItem : NSObject
+@interface ULItem : NSObject
 
 /// 
-/// Constructs a new ULLayoutItem for the indicated view. You should not generally need to call 
+/// Constructs a new ULItem for the indicated view. You should not generally need to call 
 /// this.
 /// 
 - (id)initWithItem:(id)item;
@@ -34,42 +34,42 @@
 @property (readonly, nonatomic) id item;
 
 /// The left edge of the view.
-@property (readonly, nonatomic) ULLayoutXPosition * left;
+@property (readonly, nonatomic) ULXPositionAttribute * left;
 /// The right edge of the view.
-@property (readonly, nonatomic) ULLayoutXPosition * right;
+@property (readonly, nonatomic) ULXPositionAttribute * right;
 /// The top edge of the view.
-@property (readonly, nonatomic) ULLayoutYPosition * top;
+@property (readonly, nonatomic) ULYPositionAttribute * top;
 /// The bottom edge of the view.
-@property (readonly, nonatomic) ULLayoutYPosition * bottom;
+@property (readonly, nonatomic) ULYPositionAttribute * bottom;
 /// The leading edge of the view. (This is left in LTR locales and right in RTL locales.)
-@property (readonly, nonatomic) ULLayoutXPosition * leading;
+@property (readonly, nonatomic) ULXPositionAttribute * leading;
 /// The trailing edge of the view. (This is right in LTR locales and left in RTL locales.)
-@property (readonly, nonatomic) ULLayoutXPosition * trailing;
+@property (readonly, nonatomic) ULXPositionAttribute * trailing;
 /// The width of the view.
-@property (readonly, nonatomic) ULLayoutDimension * width;
+@property (readonly, nonatomic) ULDimensionAttribute * width;
 /// The height of the view.
-@property (readonly, nonatomic) ULLayoutDimension * height;
+@property (readonly, nonatomic) ULDimensionAttribute * height;
 /// The horizontal center of the view.
-@property (readonly, nonatomic) ULLayoutXPosition * centerX;
+@property (readonly, nonatomic) ULXPositionAttribute * centerX;
 /// The vertical center of the view.
-@property (readonly, nonatomic) ULLayoutYPosition * centerY;
+@property (readonly, nonatomic) ULYPositionAttribute * centerY;
 /// The baseline of text in the view.
-@property (readonly, nonatomic) ULLayoutYPosition * baseline;
+@property (readonly, nonatomic) ULYPositionAttribute * baseline;
 
 /// Constrains the current view to match the top and bottom of the other view. Returns the enforcing constraints.
-- (NSArray*)constrainToVerticalEdges:(ULLayoutItem*)otherView;
+- (NSArray*)constrainToVerticalEdges:(ULItem*)otherView;
 /// Constrains the current view to match the left and right of the other view. Returns the enforcing constraints.
-- (NSArray*)constrainToHorizontalEdges:(ULLayoutItem*)otherView;
+- (NSArray*)constrainToHorizontalEdges:(ULItem*)otherView;
 /// Constrainst the current view to match all edges with the other view, effectively matching its position and size. Returns the enforcing constraints.
-- (NSArray*)constrainToEdges:(ULLayoutItem*)otherView;
+- (NSArray*)constrainToEdges:(ULItem*)otherView;
 
 /// Constrains the current view to make its trailing edge touch the other view's leading edge. Returns the enforcing constraint.
-- (NSLayoutConstraint *)constrainToBeside:(ULLayoutItem *)item;
+- (NSLayoutConstraint *)constrainToBeside:(ULItem *)item;
 /// Constrains the current view to make its trailing edge stay the indicated number of points from the other view's leading edge. Returns the enforcing constraint.
-- (NSLayoutConstraint *)constrainToBeside:(ULLayoutItem *)item spacing:(CGFloat)spacing;
+- (NSLayoutConstraint *)constrainToBeside:(ULItem *)item spacing:(CGFloat)spacing;
 /// Constrains the current view to make its bottom edge touch the other view's top edge. Returns the enforcing constraint.
-- (NSLayoutConstraint *)constrainToAbove:(ULLayoutItem *)item;
+- (NSLayoutConstraint *)constrainToAbove:(ULItem *)item;
 /// Constrains the current view to make its bottom edge stay the indicated number of points from the other view's top edge. Returns the enforcing constraint.
-- (NSLayoutConstraint *)constrainToAbove:(ULLayoutItem *)item spacing:(CGFloat)spacing;
+- (NSLayoutConstraint *)constrainToAbove:(ULItem *)item spacing:(CGFloat)spacing;
 
 @end

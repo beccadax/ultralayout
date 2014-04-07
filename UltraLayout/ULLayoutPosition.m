@@ -8,10 +8,10 @@
 
 #import "ULLayoutPosition.h"
 
-@implementation ULLayoutXPosition
+@implementation ULXPositionAttribute
 
 @end
 
-@implementation ULLayoutYPosition
+@implementation ULYPositionAttribute
 
 @end

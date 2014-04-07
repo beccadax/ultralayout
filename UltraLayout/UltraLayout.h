@@ -9,19 +9,19 @@
 #import <Foundation/Foundation.h>
 
 #import "NSLayoutConstraint+ULExtensions.h"
-#import "ULLayoutItem.h"
-#import "ULLayoutAttribute.h"
-#import "ULLayoutDimension.h"
+#import "ULItem.h"
+#import "ULAttribute.h"
+#import "ULDimensionAttribute.h"
 #import "ULLayoutPosition.h"
 
 #if TARGET_OS_IPHONE
 
 #import "UIView+ULInitExtensions.h"
-#import "UIView+ULLayoutAttributes.h"
+#import "UIView+ULItem.h"
 
 #else
 
 #import "NSView+ULInitExtensions.h"
-#import "NSView+ULLayoutAttributes.h"
+#import "NSView+ULItem.h"
 
 #endif
