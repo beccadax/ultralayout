@@ -21,9 +21,19 @@
 @property (readonly, strong, nonatomic) id item;
 @property (readonly, assign, nonatomic) NSLayoutAttribute attribute;
 
+- (NSLayoutConstraint*)constraintForRelation:(NSLayoutRelation)relation toAttribute:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
 - (NSLayoutConstraint*)constraintForAttribute:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
+
 - (NSLayoutConstraint*)constrainTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
+- (NSLayoutConstraint*)constrainToBefore:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
+- (NSLayoutConstraint*)constrainToAfter:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
+
 - (NSLayoutConstraint*)constrainTo:(ULLayoutAttribute*)other;
+- (NSLayoutConstraint*)constrainToBefore:(ULLayoutAttribute*)other;
+- (NSLayoutConstraint*)constrainToAfter:(ULLayoutAttribute*)other;
+
 - (NSLayoutConstraint*)constrainToValue:(CGFloat)value;
+- (NSLayoutConstraint*)constrainToLessThanValue:(CGFloat)value;
+- (NSLayoutConstraint*)constrainToGreaterThanValue:(CGFloat)value;
 
 @end
