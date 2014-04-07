@@ -47,7 +47,7 @@
 		84B212D018F2537F00235C3B /* NSView+ULInitExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 84B212CD18F2536C00235C3B /* NSView+ULInitExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84B212D218F253D600235C3B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B212D118F253D600235C3B /* Cocoa.framework */; };
 		84B212D318F2546500235C3B /* NSView+ULInitExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B212CE18F2536C00235C3B /* NSView+ULInitExtensions.m */; };
-		84B212D618F257CA00235C3B /* ULLayoutDimension.h in Headers */ = {isa = PBXBuildFile; fileRef = 84B212D418F257CA00235C3B /* ULLayoutDimension.h */; };
+		84B212D618F257CA00235C3B /* ULLayoutDimension.h in Headers */ = {isa = PBXBuildFile; fileRef = 84B212D418F257CA00235C3B /* ULLayoutDimension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84B212D718F257CA00235C3B /* ULLayoutDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B212D518F257CA00235C3B /* ULLayoutDimension.m */; };
 		84B212D818F257CA00235C3B /* ULLayoutDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B212D518F257CA00235C3B /* ULLayoutDimension.m */; };
 /* End PBXBuildFile section */
@@ -76,6 +76,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				84B212DE18F25CAA00235C3B /* ULLayoutDimension.h in CopyFiles */,
 				84B2129118F2332200235C3B /* ULLayoutItem.h in CopyFiles */,
 				84B2128D18F2306400235C3B /* AppKitOrUIKit.h in CopyFiles */,
 				84B2128718F21EE300235C3B /* NSLayoutConstraint+ULExtensions.h in CopyFiles */,

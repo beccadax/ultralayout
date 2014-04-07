@@ -11,6 +11,7 @@
 #import "NSLayoutConstraint+ULExtensions.h"
 #import "ULLayoutItem.h"
 #import "ULLayoutAttribute.h"
+#import "ULLayoutDimension.h"
 
 #if TARGET_OS_IPHONE
 
