@@ -8,6 +8,8 @@
 
 #import "UIView+ULLayoutAttributes.h"
 
+#import "ULLayoutAttribute.h"
+
 @implementation UIView (ULLayoutAttributes)
 
 - (ULLayoutAttribute *)left {
