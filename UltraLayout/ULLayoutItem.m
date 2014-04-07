@@ -8,8 +8,8 @@
 
 #import "ULLayoutItem.h"
 
-#import "ULLayoutAttribute.h"
 #import "ULLayoutDimension.h"
+#import "ULLayoutPosition.h"
 
 @implementation ULLayoutItem
 
@@ -20,28 +20,28 @@
     return self;
 }
 
-- (ULLayoutAttribute *)left {
-    return [[ULLayoutAttribute alloc] initWithItem:self.item attribute:NSLayoutAttributeLeft];
+- (ULLayoutXPosition *)left {
+    return [[ULLayoutXPosition alloc] initWithItem:self.item attribute:NSLayoutAttributeLeft];
 }
 
-- (ULLayoutAttribute *)right {
-    return [[ULLayoutAttribute alloc] initWithItem:self.item attribute:NSLayoutAttributeRight];
+- (ULLayoutXPosition *)right {
+    return [[ULLayoutXPosition alloc] initWithItem:self.item attribute:NSLayoutAttributeRight];
 }
 
-- (ULLayoutAttribute *)top {
-    return [[ULLayoutAttribute alloc] initWithItem:self.item attribute:NSLayoutAttributeTop];
+- (ULLayoutYPosition *)top {
+    return [[ULLayoutYPosition alloc] initWithItem:self.item attribute:NSLayoutAttributeTop];
 }
 
-- (ULLayoutAttribute *)bottom {
-    return [[ULLayoutAttribute alloc] initWithItem:self.item attribute:NSLayoutAttributeBottom];
+- (ULLayoutYPosition *)bottom {
+    return [[ULLayoutYPosition alloc] initWithItem:self.item attribute:NSLayoutAttributeBottom];
 }
 
-- (ULLayoutAttribute *)leading {
-    return [[ULLayoutAttribute alloc] initWithItem:self.item attribute:NSLayoutAttributeLeading];
+- (ULLayoutXPosition *)leading {
+    return [[ULLayoutXPosition alloc] initWithItem:self.item attribute:NSLayoutAttributeLeading];
 }
 
-- (ULLayoutAttribute *)trailing {
-    return [[ULLayoutAttribute alloc] initWithItem:self.item attribute:NSLayoutAttributeTrailing];
+- (ULLayoutXPosition *)trailing {
+    return [[ULLayoutXPosition alloc] initWithItem:self.item attribute:NSLayoutAttributeTrailing];
 }
 
 - (ULLayoutDimension *)width {
@@ -52,16 +52,16 @@
     return [[ULLayoutDimension alloc] initWithItem:self.item attribute:NSLayoutAttributeHeight];
 }
 
-- (ULLayoutAttribute *)centerX {
-    return [[ULLayoutAttribute alloc] initWithItem:self.item attribute:NSLayoutAttributeCenterX];
+- (ULLayoutXPosition *)centerX {
+    return [[ULLayoutXPosition alloc] initWithItem:self.item attribute:NSLayoutAttributeCenterX];
 }
 
-- (ULLayoutAttribute *)centerY {
-    return [[ULLayoutAttribute alloc] initWithItem:self.item attribute:NSLayoutAttributeCenterY];
+- (ULLayoutYPosition *)centerY {
+    return [[ULLayoutYPosition alloc] initWithItem:self.item attribute:NSLayoutAttributeCenterY];
 }
 
-- (ULLayoutAttribute *)baseline {
-    return [[ULLayoutAttribute alloc] initWithItem:self.item attribute:NSLayoutAttributeBaseline];
+- (ULLayoutYPosition *)baseline {
+    return [[ULLayoutYPosition alloc] initWithItem:self.item attribute:NSLayoutAttributeBaseline];
 }
 
 - (NSArray*)constrainToVerticalEdges:(ULLayoutItem *)otherView {

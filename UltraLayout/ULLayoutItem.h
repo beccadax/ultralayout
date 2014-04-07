@@ -8,8 +8,9 @@
 
 #import "AppKitOrUIKit.h"
 
-@class ULLayoutAttribute;
 @class ULLayoutDimension;
+@class ULLayoutXPosition;
+@class ULLayoutYPosition;
 
 /// 
 /// ULLayoutItem is used to construct ULLayoutAttributes for a particular view.
@@ -33,27 +34,27 @@
 @property (readonly, nonatomic) id item;
 
 /// The left edge of the view.
-@property (readonly, nonatomic) ULLayoutAttribute * left;
+@property (readonly, nonatomic) ULLayoutXPosition * left;
 /// The right edge of the view.
-@property (readonly, nonatomic) ULLayoutAttribute * right;
+@property (readonly, nonatomic) ULLayoutXPosition * right;
 /// The top edge of the view.
-@property (readonly, nonatomic) ULLayoutAttribute * top;
+@property (readonly, nonatomic) ULLayoutYPosition * top;
 /// The bottom edge of the view.
-@property (readonly, nonatomic) ULLayoutAttribute * bottom;
+@property (readonly, nonatomic) ULLayoutYPosition * bottom;
 /// The leading edge of the view. (This is left in LTR locales and right in RTL locales.)
-@property (readonly, nonatomic) ULLayoutAttribute * leading;
+@property (readonly, nonatomic) ULLayoutXPosition * leading;
 /// The trailing edge of the view. (This is right in LTR locales and left in RTL locales.)
-@property (readonly, nonatomic) ULLayoutAttribute * trailing;
+@property (readonly, nonatomic) ULLayoutXPosition * trailing;
 /// The width of the view.
 @property (readonly, nonatomic) ULLayoutDimension * width;
 /// The height of the view.
 @property (readonly, nonatomic) ULLayoutDimension * height;
 /// The horizontal center of the view.
-@property (readonly, nonatomic) ULLayoutAttribute * centerX;
+@property (readonly, nonatomic) ULLayoutXPosition * centerX;
 /// The vertical center of the view.
-@property (readonly, nonatomic) ULLayoutAttribute * centerY;
+@property (readonly, nonatomic) ULLayoutYPosition * centerY;
 /// The baseline of text in the view.
-@property (readonly, nonatomic) ULLayoutAttribute * baseline;
+@property (readonly, nonatomic) ULLayoutYPosition * baseline;
 
 /// Constrains the current view to match the top and bottom of the other view. Returns the enforcing constraints.
 - (NSArray*)constrainToVerticalEdges:(ULLayoutItem*)otherView;
