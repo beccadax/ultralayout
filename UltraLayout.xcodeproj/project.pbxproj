@@ -53,6 +53,7 @@
 		84B212E518F2883100235C3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B212E418F2883100235C3B /* UIKit.framework */; };
 		84B212E618F2884200235C3B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B212D118F253D600235C3B /* Cocoa.framework */; };
 		84B212E718F2884800235C3B /* UltraLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B2129718F2500A00235C3B /* UltraLayout.framework */; };
+		84B2131B18F28CAD00235C3B /* ULMacLayoutConstraintAddRemoveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2131A18F28CAD00235C3B /* ULMacLayoutConstraintAddRemoveTests.m */; };
 		84B2131D18F28CBE00235C3B /* ULMacInitExtensionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2131C18F28CBE00235C3B /* ULMacInitExtensionTests.m */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +139,7 @@
 		84B212D918F25A8000235C3B /* ULLayoutPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ULLayoutPosition.h; sourceTree = "<group>"; };
 		84B212DA18F25A8000235C3B /* ULLayoutPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULLayoutPosition.m; sourceTree = "<group>"; };
 		84B212E418F2883100235C3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		84B2131A18F28CAD00235C3B /* ULMacLayoutConstraintAddRemoveTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULMacLayoutConstraintAddRemoveTests.m; sourceTree = "<group>"; };
 		84B2131C18F28CBE00235C3B /* ULMacInitExtensionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULMacInitExtensionTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -323,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				84B212B318F2500A00235C3B /* Supporting Files */,
+				84B2131A18F28CAD00235C3B /* ULMacLayoutConstraintAddRemoveTests.m */,
 				84B2131C18F28CBE00235C3B /* ULMacInitExtensionTests.m */,
 			);
 			path = "UltraLayout MacTests";
@@ -538,6 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B2131D18F28CBE00235C3B /* ULMacInitExtensionTests.m in Sources */,
+				84B2131B18F28CAD00235C3B /* ULMacLayoutConstraintAddRemoveTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
