@@ -8,7 +8,7 @@
 
 #import "AppKitOrUIKit.h"
 
-@class ULLayoutDimension;
+@class ULDimensionAttribute;
 @class ULLayoutXPosition;
 @class ULLayoutYPosition;
 
@@ -46,9 +46,9 @@
 /// The trailing edge of the view. (This is right in LTR locales and left in RTL locales.)
 @property (readonly, nonatomic) ULLayoutXPosition * trailing;
 /// The width of the view.
-@property (readonly, nonatomic) ULLayoutDimension * width;
+@property (readonly, nonatomic) ULDimensionAttribute * width;
 /// The height of the view.
-@property (readonly, nonatomic) ULLayoutDimension * height;
+@property (readonly, nonatomic) ULDimensionAttribute * height;
 /// The horizontal center of the view.
 @property (readonly, nonatomic) ULLayoutXPosition * centerX;
 /// The vertical center of the view.

@@ -11,7 +11,7 @@
 /// 
 /// ULLayoutXPosition is a ULAttribute that represents a left-right position, 
 /// as opposed to a dimension or top-bottom position. ULLayoutXPosition, and its sibling classes
-/// ULLayoutYPosition and ULLayoutDimension, help ensure you don't construct invalid constraints.
+/// ULLayoutYPosition and ULDimensionAttribute, help ensure you don't construct invalid constraints.
 /// 
 @interface ULLayoutXPosition : ULAttribute
 
@@ -38,7 +38,7 @@
 /// 
 /// ULLayoutYPosition is a ULAttribute that represents a top-bottom position, 
 /// as opposed to a dimension or left-right position. ULLayoutYPosition, and its sibling classes
-/// ULLayoutXPosition and ULLayoutDimension, help ensure you don't construct invalid constraints.
+/// ULLayoutXPosition and ULDimensionAttribute, help ensure you don't construct invalid constraints.
 /// 
 @interface ULLayoutYPosition : ULAttribute
 

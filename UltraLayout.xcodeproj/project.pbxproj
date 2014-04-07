@@ -47,13 +47,13 @@
 		84B212D018F2537F00235C3B /* NSView+ULInitExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 84B212CD18F2536C00235C3B /* NSView+ULInitExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84B212D218F253D600235C3B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B212D118F253D600235C3B /* Cocoa.framework */; };
 		84B212D318F2546500235C3B /* NSView+ULInitExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B212CE18F2536C00235C3B /* NSView+ULInitExtensions.m */; };
-		84B212D618F257CA00235C3B /* ULLayoutDimension.h in Headers */ = {isa = PBXBuildFile; fileRef = 84B212D418F257CA00235C3B /* ULLayoutDimension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		84B212D718F257CA00235C3B /* ULLayoutDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B212D518F257CA00235C3B /* ULLayoutDimension.m */; };
-		84B212D818F257CA00235C3B /* ULLayoutDimension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B212D518F257CA00235C3B /* ULLayoutDimension.m */; };
+		84B212D618F257CA00235C3B /* ULDimensionAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 84B212D418F257CA00235C3B /* ULDimensionAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84B212D718F257CA00235C3B /* ULDimensionAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B212D518F257CA00235C3B /* ULDimensionAttribute.m */; };
+		84B212D818F257CA00235C3B /* ULDimensionAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B212D518F257CA00235C3B /* ULDimensionAttribute.m */; };
 		84B212DB18F25A8000235C3B /* ULLayoutPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = 84B212D918F25A8000235C3B /* ULLayoutPosition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84B212DC18F25A8000235C3B /* ULLayoutPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B212DA18F25A8000235C3B /* ULLayoutPosition.m */; };
 		84B212DD18F25A8000235C3B /* ULLayoutPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B212DA18F25A8000235C3B /* ULLayoutPosition.m */; };
-		84B212DE18F25CAA00235C3B /* ULLayoutDimension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84B212D418F257CA00235C3B /* ULLayoutDimension.h */; };
+		84B212DE18F25CAA00235C3B /* ULDimensionAttribute.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84B212D418F257CA00235C3B /* ULDimensionAttribute.h */; };
 		84B212DF18F25F0000235C3B /* ULLayoutPosition.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84B212D918F25A8000235C3B /* ULLayoutPosition.h */; };
 /* End PBXBuildFile section */
 
@@ -82,7 +82,7 @@
 			dstSubfolderSpec = 16;
 			files = (
 				84B212DF18F25F0000235C3B /* ULLayoutPosition.h in CopyFiles */,
-				84B212DE18F25CAA00235C3B /* ULLayoutDimension.h in CopyFiles */,
+				84B212DE18F25CAA00235C3B /* ULDimensionAttribute.h in CopyFiles */,
 				84B2129118F2332200235C3B /* ULItem.h in CopyFiles */,
 				84B2128D18F2306400235C3B /* AppKitOrUIKit.h in CopyFiles */,
 				84B2128718F21EE300235C3B /* NSLayoutConstraint+ULExtensions.h in CopyFiles */,
@@ -136,8 +136,8 @@
 		84B212CD18F2536C00235C3B /* NSView+ULInitExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+ULInitExtensions.h"; sourceTree = "<group>"; };
 		84B212CE18F2536C00235C3B /* NSView+ULInitExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+ULInitExtensions.m"; sourceTree = "<group>"; };
 		84B212D118F253D600235C3B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		84B212D418F257CA00235C3B /* ULLayoutDimension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ULLayoutDimension.h; sourceTree = "<group>"; };
-		84B212D518F257CA00235C3B /* ULLayoutDimension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULLayoutDimension.m; sourceTree = "<group>"; };
+		84B212D418F257CA00235C3B /* ULDimensionAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ULDimensionAttribute.h; sourceTree = "<group>"; };
+		84B212D518F257CA00235C3B /* ULDimensionAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULDimensionAttribute.m; sourceTree = "<group>"; };
 		84B212D918F25A8000235C3B /* ULLayoutPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ULLayoutPosition.h; sourceTree = "<group>"; };
 		84B212DA18F25A8000235C3B /* ULLayoutPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULLayoutPosition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -279,8 +279,8 @@
 				84B2128F18F2315C00235C3B /* ULItem.m */,
 				84B2127818F218FA00235C3B /* ULAttribute.h */,
 				84B2127918F218FA00235C3B /* ULAttribute.m */,
-				84B212D418F257CA00235C3B /* ULLayoutDimension.h */,
-				84B212D518F257CA00235C3B /* ULLayoutDimension.m */,
+				84B212D418F257CA00235C3B /* ULDimensionAttribute.h */,
+				84B212D518F257CA00235C3B /* ULDimensionAttribute.m */,
 				84B212D918F25A8000235C3B /* ULLayoutPosition.h */,
 				84B212DA18F25A8000235C3B /* ULLayoutPosition.m */,
 			);
@@ -351,7 +351,7 @@
 				84B212C418F2508C00235C3B /* ULAttribute.h in Headers */,
 				84B212C318F2508C00235C3B /* ULItem.h in Headers */,
 				84B212CB18F252F700235C3B /* NSView+ULLayoutAttributes.h in Headers */,
-				84B212D618F257CA00235C3B /* ULLayoutDimension.h in Headers */,
+				84B212D618F257CA00235C3B /* ULDimensionAttribute.h in Headers */,
 				84B212DB18F25A8000235C3B /* ULLayoutPosition.h in Headers */,
 				84B212C118F2508C00235C3B /* AppKitOrUIKit.h in Headers */,
 			);
@@ -503,7 +503,7 @@
 			files = (
 				84B2129018F2315C00235C3B /* ULItem.m in Sources */,
 				84B212DC18F25A8000235C3B /* ULLayoutPosition.m in Sources */,
-				84B212D718F257CA00235C3B /* ULLayoutDimension.m in Sources */,
+				84B212D718F257CA00235C3B /* ULDimensionAttribute.m in Sources */,
 				84B2128018F21A1E00235C3B /* UIView+ULLayoutAttributes.m in Sources */,
 				84B2127D18F2197900235C3B /* NSLayoutConstraint+ULExtensions.m in Sources */,
 				84B2127718F2170300235C3B /* UIView+ULInitExtensions.m in Sources */,
@@ -526,7 +526,7 @@
 			files = (
 				84B212C618F250D100235C3B /* NSLayoutConstraint+ULExtensions.m in Sources */,
 				84B212DD18F25A8000235C3B /* ULLayoutPosition.m in Sources */,
-				84B212D818F257CA00235C3B /* ULLayoutDimension.m in Sources */,
+				84B212D818F257CA00235C3B /* ULDimensionAttribute.m in Sources */,
 				84B212C818F250D100235C3B /* ULAttribute.m in Sources */,
 				84B212D318F2546500235C3B /* NSView+ULInitExtensions.m in Sources */,
 				84B212CC18F252F700235C3B /* NSView+ULLayoutAttributes.m in Sources */,

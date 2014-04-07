@@ -11,7 +11,7 @@
 #import "NSLayoutConstraint+ULExtensions.h"
 #import "ULItem.h"
 
-#import "ULLayoutDimension.h"
+#import "ULDimensionAttribute.h"
 #import "ULLayoutPosition.h"
 
 @implementation ULAttribute
@@ -23,7 +23,7 @@
         switch(attr) {
             case NSLayoutAttributeHeight:
             case NSLayoutAttributeWidth:
-                return [[ULLayoutDimension alloc] initWithItem:item attribute:attr];
+                return [[ULDimensionAttribute alloc] initWithItem:item attribute:attr];
                 
             case NSLayoutAttributeTop:
             case NSLayoutAttributeCenterY:
