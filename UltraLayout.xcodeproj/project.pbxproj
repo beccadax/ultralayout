@@ -78,6 +78,7 @@
 		84B2127F18F21A1E00235C3B /* UIView+ULLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ULLayoutAttributes.m"; sourceTree = "<group>"; };
 		84B2128118F21AEC00235C3B /* UIView+ULLayoutExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ULLayoutExtensions.h"; sourceTree = "<group>"; };
 		84B2128218F21AEC00235C3B /* UIView+ULLayoutExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ULLayoutExtensions.m"; sourceTree = "<group>"; };
+		84B2128618F21EC100235C3B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +107,7 @@
 		84B2124318F216E100235C3B = {
 			isa = PBXGroup;
 			children = (
+				84B2128618F21EC100235C3B /* README.md */,
 				84B2125118F216E100235C3B /* UltraLayout */,
 				84B2126518F216E100235C3B /* UltraLayoutTests */,
 				84B2124E18F216E100235C3B /* Frameworks */,
