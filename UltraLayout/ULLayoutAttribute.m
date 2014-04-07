@@ -29,7 +29,7 @@
     return [[self alloc] initWithItem:nil attribute:NSLayoutAttributeNotAnAttribute];
 }
 
-- (NSLayoutConstraint*)constraintForRelation:(NSLayoutRelation)relation toAttribute:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
+- (NSLayoutConstraint*)constraintForRelation:(NSLayoutRelation)relation toAttribute:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority {
     if(other == nil) {
         other = [ULLayoutAttribute nonAttribute];
     }
@@ -40,81 +40,81 @@
     return constraint;
 }
 
-- (NSLayoutConstraint*)constraintConstrainingTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
+- (NSLayoutConstraint*)constraintConstrainingTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority {
     return [self constraintForRelation:NSLayoutRelationEqual toAttribute:other offset:offset priority:priority];
 }
 
-- (NSLayoutConstraint*)constraintConstrainingUpTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
+- (NSLayoutConstraint*)constraintConstrainingUpTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority {
     return [self constraintForRelation:NSLayoutRelationLessThanOrEqual toAttribute:other offset:offset priority:priority];
 }
 
-- (NSLayoutConstraint*)constraintConstrainingDownTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
+- (NSLayoutConstraint*)constraintConstrainingDownTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority {
     return [self constraintForRelation:NSLayoutRelationGreaterThanOrEqual toAttribute:other offset:offset priority:priority];
 
 }
 
-- (NSLayoutConstraint*)constrainTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
+- (NSLayoutConstraint*)constrainTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority {
     return [[self constraintConstrainingTo:other offset:offset priority:priority] add];
 }
 
-- (NSLayoutConstraint*)constrainUpTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
+- (NSLayoutConstraint*)constrainUpTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority {
     return [[self constraintConstrainingUpTo:other offset:offset priority:priority] add];
 }
 
-- (NSLayoutConstraint*)constrainDownTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
+- (NSLayoutConstraint*)constrainDownTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority {
     return [[self constraintConstrainingDownTo:other offset:offset priority:priority] add];
 }
 
 - (NSLayoutConstraint*)constrainTo:(ULLayoutAttribute*)other {
-    return [self constrainTo:other offset:0.0 priority:UILayoutPriorityRequired];
+    return [self constrainTo:other offset:0.0 priority:ULLayoutPriorityRequired];
 }
 
 - (NSLayoutConstraint*)constrainUpTo:(ULLayoutAttribute*)other {
-    return [self constrainUpTo:other offset:0.0 priority:UILayoutPriorityRequired];
+    return [self constrainUpTo:other offset:0.0 priority:ULLayoutPriorityRequired];
 }
 
 - (NSLayoutConstraint*)constrainDownTo:(ULLayoutAttribute*)other {
-    return [self constrainDownTo:other offset:0.0 priority:UILayoutPriorityRequired];
+    return [self constrainDownTo:other offset:0.0 priority:ULLayoutPriorityRequired];
 }
 
 - (NSLayoutConstraint*)constrainToValue:(CGFloat)value {
-    return [self constrainTo:[self.class nonAttribute] offset:value priority:UILayoutPriorityRequired];
+    return [self constrainTo:[self.class nonAttribute] offset:value priority:ULLayoutPriorityRequired];
 }
 
 - (NSLayoutConstraint*)constrainUpToValue:(CGFloat)value {
-    return [self constrainUpTo:[self.class nonAttribute] offset:value priority:UILayoutPriorityRequired];
+    return [self constrainUpTo:[self.class nonAttribute] offset:value priority:ULLayoutPriorityRequired];
 }
 
 - (NSLayoutConstraint*)constrainDownToValue:(CGFloat)value {
-    return [self constrainDownTo:[self.class nonAttribute] offset:value priority:UILayoutPriorityRequired];
+    return [self constrainDownTo:[self.class nonAttribute] offset:value priority:ULLayoutPriorityRequired];
 }
 
 - (ULLayoutAttribute *)superviewAttribute {
     return [[ULLayoutAttribute alloc] initWithItem:[self.item superview] attribute:self.attribute];
 }
 
-- (NSLayoutConstraint *)constrainToSuperviewWithOffset:(CGFloat)offset priority:(UILayoutPriority)priority {
+- (NSLayoutConstraint *)constrainToSuperviewWithOffset:(CGFloat)offset priority:(ULLayoutPriority)priority {
     return [self constrainTo:self.superviewAttribute offset:offset priority:priority];
 }
 
-- (NSLayoutConstraint *)constrainUpToSuperviewWithOffset:(CGFloat)offset priority:(UILayoutPriority)priority {
+- (NSLayoutConstraint *)constrainUpToSuperviewWithOffset:(CGFloat)offset priority:(ULLayoutPriority)priority {
     return [self constrainUpTo:self.superviewAttribute offset:offset priority:priority];    
 }
 
-- (NSLayoutConstraint *)constrainDownToSuperviewWithOffset:(CGFloat)offset priority:(UILayoutPriority)priority {
+- (NSLayoutConstraint *)constrainDownToSuperviewWithOffset:(CGFloat)offset priority:(ULLayoutPriority)priority {
     return [self constrainDownTo:self.superviewAttribute offset:offset priority:priority];
 }
 
 - (NSLayoutConstraint *)constrainToSuperview {
-    return [self constrainToSuperviewWithOffset:0 priority:UILayoutPriorityRequired];
+    return [self constrainToSuperviewWithOffset:0 priority:ULLayoutPriorityRequired];
 }
 
 - (NSLayoutConstraint *)constrainUpToSuperview {
-    return [self constrainUpToSuperviewWithOffset:0 priority:UILayoutPriorityRequired];
+    return [self constrainUpToSuperviewWithOffset:0 priority:ULLayoutPriorityRequired];
 }
 
 - (NSLayoutConstraint *)constrainDownToSuperview {
-    return [self constrainDownToSuperviewWithOffset:0 priority:UILayoutPriorityRequired];
+    return [self constrainDownToSuperviewWithOffset:0 priority:ULLayoutPriorityRequired];
 }
 
 @end

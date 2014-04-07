@@ -81,7 +81,7 @@
 }
 
 - (NSLayoutConstraint *)constrainToBeside:(ULLayoutItem *)item spacing:(CGFloat)spacing {
-    return [self.trailing constrainTo:item.leading offset:spacing priority:UILayoutPriorityRequired];
+    return [self.trailing constrainTo:item.leading offset:spacing priority:ULLayoutPriorityRequired];
 }
 
 - (NSLayoutConstraint *)constrainToAbove:(ULLayoutItem *)item {
@@ -89,7 +89,7 @@
 }
 
 - (NSLayoutConstraint *)constrainToAbove:(ULLayoutItem *)item spacing:(CGFloat)spacing {
-    return [self.bottom constrainTo:item.top offset:spacing priority:UILayoutPriorityRequired];
+    return [self.bottom constrainTo:item.top offset:spacing priority:ULLayoutPriorityRequired];
 }
 
 @end

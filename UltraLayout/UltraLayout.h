@@ -19,6 +19,7 @@
 
 #else
 
-#error "Mac version not yet implemented"
+#import "NSView+ULInitExtensions.h"
+#import "NSView+ULLayoutAttributes.h"
 
 #endif
