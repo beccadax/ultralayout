@@ -9,6 +9,7 @@
 #import "ULLayoutItem.h"
 
 #import "ULLayoutAttribute.h"
+#import "ULLayoutDimension.h"
 
 @implementation ULLayoutItem
 
@@ -43,12 +44,12 @@
     return [[ULLayoutAttribute alloc] initWithItem:self.item attribute:NSLayoutAttributeTrailing];
 }
 
-- (ULLayoutAttribute *)width {
-    return [[ULLayoutAttribute alloc] initWithItem:self.item attribute:NSLayoutAttributeWidth];
+- (ULLayoutDimension *)width {
+    return [[ULLayoutDimension alloc] initWithItem:self.item attribute:NSLayoutAttributeWidth];
 }
 
-- (ULLayoutAttribute *)height {
-    return [[ULLayoutAttribute alloc] initWithItem:self.item attribute:NSLayoutAttributeHeight];
+- (ULLayoutDimension *)height {
+    return [[ULLayoutDimension alloc] initWithItem:self.item attribute:NSLayoutAttributeHeight];
 }
 
 - (ULLayoutAttribute *)centerX {

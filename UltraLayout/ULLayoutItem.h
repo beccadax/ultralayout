@@ -9,6 +9,7 @@
 #import "AppKitOrUIKit.h"
 
 @class ULLayoutAttribute;
+@class ULLayoutDimension;
 
 /// 
 /// ULLayoutItem is used to construct ULLayoutAttributes for a particular view.
@@ -44,9 +45,9 @@
 /// The trailing edge of the view. (This is right in LTR locales and left in RTL locales.)
 @property (readonly, nonatomic) ULLayoutAttribute * trailing;
 /// The width of the view.
-@property (readonly, nonatomic) ULLayoutAttribute * width;
+@property (readonly, nonatomic) ULLayoutDimension * width;
 /// The height of the view.
-@property (readonly, nonatomic) ULLayoutAttribute * height;
+@property (readonly, nonatomic) ULLayoutDimension * height;
 /// The horizontal center of the view.
 @property (readonly, nonatomic) ULLayoutAttribute * centerX;
 /// The vertical center of the view.
