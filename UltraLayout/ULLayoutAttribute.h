@@ -14,7 +14,9 @@
 /// constraints to that attribute.
 /// 
 /// Although the methods in ULLayoutAttribute are used frequently, they're almost always invoked
-/// on one of its subclasses—ULLayoutDimension, ULLayoutXPosition, or ULLayoutYPosition.
+/// on one of its subclasses—ULLayoutDimension, ULLayoutXPosition, or ULLayoutYPosition. These 
+/// subclasses help ensure you don't create nonsensical constraints, by for instance constraining a 
+/// view's left edge to its neighbor's top edge.
 /// 
 @interface ULLayoutAttribute : NSObject
 
