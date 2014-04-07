@@ -12,6 +12,7 @@
 #import "ULLayoutItem.h"
 
 #import "ULLayoutDimension.h"
+#import "ULLayoutPosition.h"
 
 @implementation ULLayoutAttribute
 
@@ -24,8 +25,18 @@
             case NSLayoutAttributeWidth:
                 return [[ULLayoutDimension alloc] initWithItem:item attribute:attr];
                 
-            default:
-                break;
+            case NSLayoutAttributeTop:
+            case NSLayoutAttributeCenterY:
+            case NSLayoutAttributeBaseline:
+            case NSLayoutAttributeBottom:
+                return [[ULLayoutYPosition alloc] initWithItem:item attribute:attr];
+                
+            case NSLayoutAttributeLeft:
+            case NSLayoutAttributeLeading:
+            case NSLayoutAttributeCenterX:
+            case NSLayoutAttributeTrailing:
+            case NSLayoutAttributeRight:
+                return [[ULLayoutXPosition alloc] initWithItem:item attribute:attr];
         }
     }
     
