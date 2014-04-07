@@ -56,6 +56,7 @@
 		84B2131B18F28CAD00235C3B /* ULMacLayoutConstraintAddRemoveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2131A18F28CAD00235C3B /* ULMacLayoutConstraintAddRemoveTests.m */; };
 		84B2131D18F28CBE00235C3B /* ULMacInitExtensionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2131C18F28CBE00235C3B /* ULMacInitExtensionTests.m */; };
 		84B2131F18F292F200235C3B /* ULMacItemTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2131E18F292F200235C3B /* ULMacItemTests.m */; };
+		84B2132118F29F9F00235C3B /* ULMacAttributeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2132018F29F9F00235C3B /* ULMacAttributeTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		84B2131A18F28CAD00235C3B /* ULMacLayoutConstraintAddRemoveTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULMacLayoutConstraintAddRemoveTests.m; sourceTree = "<group>"; };
 		84B2131C18F28CBE00235C3B /* ULMacInitExtensionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULMacInitExtensionTests.m; sourceTree = "<group>"; };
 		84B2131E18F292F200235C3B /* ULMacItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULMacItemTests.m; sourceTree = "<group>"; };
+		84B2132018F29F9F00235C3B /* ULMacAttributeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULMacAttributeTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +332,7 @@
 				84B2131C18F28CBE00235C3B /* ULMacInitExtensionTests.m */,
 				84B2131A18F28CAD00235C3B /* ULMacLayoutConstraintAddRemoveTests.m */,
 				84B2131E18F292F200235C3B /* ULMacItemTests.m */,
+				84B2132018F29F9F00235C3B /* ULMacAttributeTests.m */,
 			);
 			path = "UltraLayout MacTests";
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84B2131D18F28CBE00235C3B /* ULMacInitExtensionTests.m in Sources */,
+				84B2132118F29F9F00235C3B /* ULMacAttributeTests.m in Sources */,
 				84B2131F18F292F200235C3B /* ULMacItemTests.m in Sources */,
 				84B2131B18F28CAD00235C3B /* ULMacLayoutConstraintAddRemoveTests.m in Sources */,
 			);
