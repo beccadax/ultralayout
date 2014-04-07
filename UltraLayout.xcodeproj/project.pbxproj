@@ -21,6 +21,11 @@
 		84B2127D18F2197900235C3B /* NSLayoutConstraint+ULExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2127C18F2197900235C3B /* NSLayoutConstraint+ULExtensions.m */; };
 		84B2128018F21A1E00235C3B /* UIView+ULLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2127F18F21A1E00235C3B /* UIView+ULLayoutAttributes.m */; };
 		84B2128318F21AEC00235C3B /* UIView+ULLayoutExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2128218F21AEC00235C3B /* UIView+ULLayoutExtensions.m */; };
+		84B2128718F21EE300235C3B /* NSLayoutConstraint+ULExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84B2127B18F2197900235C3B /* NSLayoutConstraint+ULExtensions.h */; };
+		84B2128818F21EE300235C3B /* ULLayoutAttribute.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84B2127818F218FA00235C3B /* ULLayoutAttribute.h */; };
+		84B2128918F21EE300235C3B /* UIView+ULInitExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84B2127518F2170300235C3B /* UIView+ULInitExtensions.h */; };
+		84B2128A18F21EE300235C3B /* UIView+ULLayoutAttributes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84B2127E18F21A1E00235C3B /* UIView+ULLayoutAttributes.h */; };
+		84B2128B18F21EE300235C3B /* UIView+ULLayoutExtensions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84B2128118F21AEC00235C3B /* UIView+ULLayoutExtensions.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,11 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				84B2128718F21EE300235C3B /* NSLayoutConstraint+ULExtensions.h in CopyFiles */,
+				84B2128818F21EE300235C3B /* ULLayoutAttribute.h in CopyFiles */,
+				84B2128918F21EE300235C3B /* UIView+ULInitExtensions.h in CopyFiles */,
+				84B2128A18F21EE300235C3B /* UIView+ULLayoutAttributes.h in CopyFiles */,
+				84B2128B18F21EE300235C3B /* UIView+ULLayoutExtensions.h in CopyFiles */,
 				84B2125518F216E100235C3B /* UltraLayout.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
