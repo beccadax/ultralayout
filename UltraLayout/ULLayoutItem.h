@@ -10,7 +10,7 @@
 
 @class ULLayoutAttribute;
 
-@interface ULLayoutAttributeSet : NSObject
+@interface ULLayoutItem : NSObject
 
 - (id)initWithItem:(id)item;
 

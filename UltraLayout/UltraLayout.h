@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "NSLayoutConstraint+ULExtensions.h"
-#import "ULLayoutAttributeSet.h"
+#import "ULLayoutItem.h"
 #import "ULLayoutAttribute.h"
 
 #if TARGET_OS_IPHONE

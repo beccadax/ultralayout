@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Architechies. All rights reserved.
 //
 
-#import "ULLayoutAttributeSet.h"
+#import "ULLayoutItem.h"
 
 #import "ULLayoutAttribute.h"
 
-@implementation ULLayoutAttributeSet
+@implementation ULLayoutItem
 
 - (id)initWithItem:(id)item {
     if((self = [super init])) {

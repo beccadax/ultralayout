@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class ULLayoutAttributeSet;
+@class ULLayoutItem;
 
 @interface UIView (ULLayoutAttributes)
 
-@property (readonly, nonatomic) ULLayoutAttributeSet * ul;
+@property (readonly, nonatomic) ULLayoutItem * ul;
 
 @end

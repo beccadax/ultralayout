@@ -8,12 +8,12 @@
 
 #import "UIView+ULLayoutAttributes.h"
 
-#import "ULLayoutAttributeSet.h"
+#import "ULLayoutItem.h"
 
 @implementation UIView (ULLayoutAttributes)
 
-- (ULLayoutAttributeSet *)ul {
-    return [[ULLayoutAttributeSet alloc] initWithItem:self];
+- (ULLayoutItem *)ul {
+    return [[ULLayoutItem alloc] initWithItem:self];
 }
 
 @end
