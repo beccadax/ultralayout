@@ -13,17 +13,17 @@
 @class ULLayoutYPosition;
 
 /// 
-/// ULLayoutItem is used to construct ULLayoutAttributes for a particular view.
+/// ULItem is used to construct ULLayoutAttributes for a particular view.
 /// 
-/// A view's ULLayoutItem is accessed through its ul property. From the item, you can 
+/// A view's ULItem is accessed through its ul property. From the item, you can 
 /// access ULLayoutAttributes for the view's various NSLayoutAttributes. You can also 
 /// use a small suite of methods to constrain it to other items in various common ways, 
 /// such as making the views sit next to each other or match some or all of their dimensions.
 /// 
-@interface ULLayoutItem : NSObject
+@interface ULItem : NSObject
 
 /// 
-/// Constructs a new ULLayoutItem for the indicated view. You should not generally need to call 
+/// Constructs a new ULItem for the indicated view. You should not generally need to call 
 /// this.
 /// 
 - (id)initWithItem:(id)item;
@@ -57,19 +57,19 @@
 @property (readonly, nonatomic) ULLayoutYPosition * baseline;
 
 /// Constrains the current view to match the top and bottom of the other view. Returns the enforcing constraints.
-- (NSArray*)constrainToVerticalEdges:(ULLayoutItem*)otherView;
+- (NSArray*)constrainToVerticalEdges:(ULItem*)otherView;
 /// Constrains the current view to match the left and right of the other view. Returns the enforcing constraints.
-- (NSArray*)constrainToHorizontalEdges:(ULLayoutItem*)otherView;
+- (NSArray*)constrainToHorizontalEdges:(ULItem*)otherView;
 /// Constrainst the current view to match all edges with the other view, effectively matching its position and size. Returns the enforcing constraints.
-- (NSArray*)constrainToEdges:(ULLayoutItem*)otherView;
+- (NSArray*)constrainToEdges:(ULItem*)otherView;
 
 /// Constrains the current view to make its trailing edge touch the other view's leading edge. Returns the enforcing constraint.
-- (NSLayoutConstraint *)constrainToBeside:(ULLayoutItem *)item;
+- (NSLayoutConstraint *)constrainToBeside:(ULItem *)item;
 /// Constrains the current view to make its trailing edge stay the indicated number of points from the other view's leading edge. Returns the enforcing constraint.
-- (NSLayoutConstraint *)constrainToBeside:(ULLayoutItem *)item spacing:(CGFloat)spacing;
+- (NSLayoutConstraint *)constrainToBeside:(ULItem *)item spacing:(CGFloat)spacing;
 /// Constrains the current view to make its bottom edge touch the other view's top edge. Returns the enforcing constraint.
-- (NSLayoutConstraint *)constrainToAbove:(ULLayoutItem *)item;
+- (NSLayoutConstraint *)constrainToAbove:(ULItem *)item;
 /// Constrains the current view to make its bottom edge stay the indicated number of points from the other view's top edge. Returns the enforcing constraint.
-- (NSLayoutConstraint *)constrainToAbove:(ULLayoutItem *)item spacing:(CGFloat)spacing;
+- (NSLayoutConstraint *)constrainToAbove:(ULItem *)item spacing:(CGFloat)spacing;
 
 @end

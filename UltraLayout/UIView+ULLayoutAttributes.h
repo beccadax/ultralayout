@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class ULLayoutItem;
+@class ULItem;
 
 @interface UIView (ULLayoutAttributes)
 
 /// 
-/// Accesses an UltraLayout item object for the current view. The ULLayoutItem can be used 
+/// Accesses an UltraLayout item object for the current view. The ULItem can be used 
 /// to add autolayout constraints in various convenient ways.
 /// 
-@property (readonly, nonatomic) ULLayoutItem * ul;
+@property (readonly, nonatomic) ULItem * ul;
 
 @end

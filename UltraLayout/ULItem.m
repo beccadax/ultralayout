@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Architechies. All rights reserved.
 //
 
-#import "ULLayoutItem.h"
+#import "ULItem.h"
 
 #import "ULLayoutDimension.h"
 #import "ULLayoutPosition.h"
 
-@implementation ULLayoutItem
+@implementation ULItem
 
 - (id)initWithItem:(id)item {
     if((self = [super init])) {
@@ -64,32 +64,32 @@
     return [[ULLayoutYPosition alloc] initWithItem:self.item attribute:NSLayoutAttributeBaseline];
 }
 
-- (NSArray*)constrainToVerticalEdges:(ULLayoutItem *)otherView {
+- (NSArray*)constrainToVerticalEdges:(ULItem *)otherView {
     return @[ [self.top constrainTo:otherView.top], [self.bottom constrainTo:otherView.bottom] ];
 }
 
-- (NSArray*)constrainToHorizontalEdges:(ULLayoutItem *)otherView {
+- (NSArray*)constrainToHorizontalEdges:(ULItem *)otherView {
     return @[ [self.left constrainTo:otherView.left], [self.right constrainTo:otherView.right] ];
 }
 
-- (NSArray*)constrainToEdges:(ULLayoutItem *)otherView {
+- (NSArray*)constrainToEdges:(ULItem *)otherView {
     return [[self constrainToHorizontalEdges:otherView] arrayByAddingObjectsFromArray:
             [self constrainToVerticalEdges:otherView]];
 }
 
-- (NSLayoutConstraint *)constrainToBeside:(ULLayoutItem *)item {
+- (NSLayoutConstraint *)constrainToBeside:(ULItem *)item {
     return [self constrainToBeside:item spacing:0];
 }
 
-- (NSLayoutConstraint *)constrainToBeside:(ULLayoutItem *)item spacing:(CGFloat)spacing {
+- (NSLayoutConstraint *)constrainToBeside:(ULItem *)item spacing:(CGFloat)spacing {
     return [self.trailing constrainTo:item.leading offset:spacing priority:ULLayoutPriorityRequired];
 }
 
-- (NSLayoutConstraint *)constrainToAbove:(ULLayoutItem *)item {
+- (NSLayoutConstraint *)constrainToAbove:(ULItem *)item {
     return [self constrainToAbove:item spacing:0];
 }
 
-- (NSLayoutConstraint *)constrainToAbove:(ULLayoutItem *)item spacing:(CGFloat)spacing {
+- (NSLayoutConstraint *)constrainToAbove:(ULItem *)item spacing:(CGFloat)spacing {
     return [self.bottom constrainTo:item.top offset:spacing priority:ULLayoutPriorityRequired];
 }
 

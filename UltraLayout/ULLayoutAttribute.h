@@ -9,7 +9,7 @@
 #import "AppKitOrUIKit.h"
 
 /// 
-/// ULLayoutAttribute represents a particular attribute—position or dimension—of a ULLayoutItem. 
+/// ULLayoutAttribute represents a particular attribute—position or dimension—of a ULItem. 
 /// You can use methods on the attribute to construct, and in some cases automatically add, 
 /// constraints to that attribute.
 /// 

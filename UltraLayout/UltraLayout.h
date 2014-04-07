@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "NSLayoutConstraint+ULExtensions.h"
-#import "ULLayoutItem.h"
+#import "ULItem.h"
 #import "ULLayoutAttribute.h"
 #import "ULLayoutDimension.h"
 #import "ULLayoutPosition.h"

@@ -9,7 +9,7 @@
 #import "ULLayoutAttribute.h"
 
 #import "NSLayoutConstraint+ULExtensions.h"
-#import "ULLayoutItem.h"
+#import "ULItem.h"
 
 #import "ULLayoutDimension.h"
 #import "ULLayoutPosition.h"
@@ -41,8 +41,8 @@
     }
     
     if((self = [super init])) {
-        if([item isKindOfClass:ULLayoutItem.class]) {
-            item = [(ULLayoutItem*)item item];
+        if([item isKindOfClass:ULItem.class]) {
+            item = [(ULItem*)item item];
         }
         
         _item = item;
