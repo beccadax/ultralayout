@@ -43,11 +43,11 @@
     return [[self constraintForAttribute:other offset:offset priority:priority] add];
 }
 
-- (NSLayoutConstraint*)constrainToBefore:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
+- (NSLayoutConstraint*)constrainUpTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
     return [[self constraintForRelation:NSLayoutRelationLessThanOrEqual toAttribute:other offset:offset priority:priority] add];
 }
 
-- (NSLayoutConstraint*)constrainToAfter:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
+- (NSLayoutConstraint*)constrainDownTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
     return [[self constraintForRelation:NSLayoutRelationGreaterThanOrEqual toAttribute:other offset:offset priority:priority] add];
 }
 
@@ -55,24 +55,24 @@
     return [self constrainTo:other offset:0.0 priority:UILayoutPriorityRequired];
 }
 
-- (NSLayoutConstraint*)constrainToBefore:(ULLayoutAttribute*)other {
-    return [self constrainToBefore:other offset:0.0 priority:UILayoutPriorityRequired];
+- (NSLayoutConstraint*)constrainUpTo:(ULLayoutAttribute*)other {
+    return [self constrainUpTo:other offset:0.0 priority:UILayoutPriorityRequired];
 }
 
-- (NSLayoutConstraint*)constrainToAfter:(ULLayoutAttribute*)other {
-    return [self constrainToAfter:other offset:0.0 priority:UILayoutPriorityRequired];
+- (NSLayoutConstraint*)constrainDownTo:(ULLayoutAttribute*)other {
+    return [self constrainDownTo:other offset:0.0 priority:UILayoutPriorityRequired];
 }
 
 - (NSLayoutConstraint*)constrainToValue:(CGFloat)value {
     return [self constrainTo:[self.class nonAttribute] offset:value priority:UILayoutPriorityRequired];
 }
 
-- (NSLayoutConstraint*)constrainToLessThanValue:(CGFloat)value {
-    return [self constrainToBefore:[self.class nonAttribute] offset:value priority:UILayoutPriorityRequired];
+- (NSLayoutConstraint*)constrainUpToValue:(CGFloat)value {
+    return [self constrainUpTo:[self.class nonAttribute] offset:value priority:UILayoutPriorityRequired];
 }
 
-- (NSLayoutConstraint*)constrainToGreaterThanValue:(CGFloat)value {
-    return [self constrainToAfter:[self.class nonAttribute] offset:value priority:UILayoutPriorityRequired];
+- (NSLayoutConstraint*)constrainDownToValue:(CGFloat)value {
+    return [self constrainDownTo:[self.class nonAttribute] offset:value priority:UILayoutPriorityRequired];
 }
 
 @end

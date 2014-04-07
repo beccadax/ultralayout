@@ -25,15 +25,15 @@
 - (NSLayoutConstraint*)constraintForAttribute:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
 
 - (NSLayoutConstraint*)constrainTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
-- (NSLayoutConstraint*)constrainToBefore:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
-- (NSLayoutConstraint*)constrainToAfter:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
+- (NSLayoutConstraint*)constrainUpTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
+- (NSLayoutConstraint*)constrainDownTo:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority;
 
 - (NSLayoutConstraint*)constrainTo:(ULLayoutAttribute*)other;
-- (NSLayoutConstraint*)constrainToBefore:(ULLayoutAttribute*)other;
-- (NSLayoutConstraint*)constrainToAfter:(ULLayoutAttribute*)other;
+- (NSLayoutConstraint*)constrainUpTo:(ULLayoutAttribute*)other;
+- (NSLayoutConstraint*)constrainDownTo:(ULLayoutAttribute*)other;
 
 - (NSLayoutConstraint*)constrainToValue:(CGFloat)value;
-- (NSLayoutConstraint*)constrainToLessThanValue:(CGFloat)value;
-- (NSLayoutConstraint*)constrainToGreaterThanValue:(CGFloat)value;
+- (NSLayoutConstraint*)constrainUpToValue:(CGFloat)value;
+- (NSLayoutConstraint*)constrainDownToValue:(CGFloat)value;
 
 @end
