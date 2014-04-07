@@ -19,6 +19,7 @@
 
 #else
 
+#import "NSView+ULLayoutAttributes.h"
 #warning "Mac version not fully implemented"
 
 #endif
