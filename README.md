@@ -21,6 +21,11 @@ For example:
     [leftView.ul.height constrainToSuperviewWithOffset:0 priority:UILayoutPriorityDefaultHigh];
     [leftView.ul.height constrainUpToValue:100];
 
+UltraLayout includes type features that ensure that bizarre, likely nonsensical constraints cause compiler warnings:
+
+    [rightView.ul.width constrainTo:leftView.ul.right];
+    // Warning: Incompatible pointer types sending 'ULXPositionAttribute *' to parameter of type 'ULDimensionAttribute *'
+
 UltraLayout also adds a new UIView initializer that returns autolayout-ready views:
 
     UIView * myView = [[UIView alloc] initWithSuperview:anotherView];
