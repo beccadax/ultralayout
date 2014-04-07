@@ -11,9 +11,35 @@
 #import "NSLayoutConstraint+ULExtensions.h"
 #import "ULLayoutItem.h"
 
+#import "ULLayoutDimension.h"
+#import "ULLayoutPosition.h"
+
 @implementation ULLayoutAttribute
 
 - (id)initWithItem:(id)item attribute:(NSLayoutAttribute)attr {
+    // If we're constructing the superclass...
+    if(self.class == [ULLayoutAttribute class]) {
+        // Try to choose a more specific subclass.
+        switch(attr) {
+            case NSLayoutAttributeHeight:
+            case NSLayoutAttributeWidth:
+                return [[ULLayoutDimension alloc] initWithItem:item attribute:attr];
+                
+            case NSLayoutAttributeTop:
+            case NSLayoutAttributeCenterY:
+            case NSLayoutAttributeBaseline:
+            case NSLayoutAttributeBottom:
+                return [[ULLayoutYPosition alloc] initWithItem:item attribute:attr];
+                
+            case NSLayoutAttributeLeft:
+            case NSLayoutAttributeLeading:
+            case NSLayoutAttributeCenterX:
+            case NSLayoutAttributeTrailing:
+            case NSLayoutAttributeRight:
+                return [[ULLayoutXPosition alloc] initWithItem:item attribute:attr];
+        }
+    }
+    
     if((self = [super init])) {
         if([item isKindOfClass:ULLayoutItem.class]) {
             item = [(ULLayoutItem*)item item];
@@ -75,18 +101,6 @@
 
 - (NSLayoutConstraint*)constrainDownTo:(ULLayoutAttribute*)other {
     return [self constrainDownTo:other offset:0.0 priority:ULLayoutPriorityRequired];
-}
-
-- (NSLayoutConstraint*)constrainToValue:(CGFloat)value {
-    return [self constrainTo:[self.class nonAttribute] offset:value priority:ULLayoutPriorityRequired];
-}
-
-- (NSLayoutConstraint*)constrainUpToValue:(CGFloat)value {
-    return [self constrainUpTo:[self.class nonAttribute] offset:value priority:ULLayoutPriorityRequired];
-}
-
-- (NSLayoutConstraint*)constrainDownToValue:(CGFloat)value {
-    return [self constrainDownTo:[self.class nonAttribute] offset:value priority:ULLayoutPriorityRequired];
 }
 
 - (ULLayoutAttribute *)superviewAttribute {
