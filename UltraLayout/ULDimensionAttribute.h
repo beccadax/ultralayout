@@ -11,7 +11,7 @@
 /// 
 /// ULDimensionAttribute is a ULAttribute that represents a size (like width or height), 
 /// as opposed to a position. ULDimensionAttribute, and its sibling classes
-/// ULLayoutXPosition and ULLayoutYPosition, help ensure you don't construct invalid constraints.
+/// ULXPositionAttribute and ULYPositionAttribute, help ensure you don't construct invalid constraints.
 /// 
 @interface ULDimensionAttribute : ULAttribute
 

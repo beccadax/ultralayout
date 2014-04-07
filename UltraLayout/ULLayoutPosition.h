@@ -9,55 +9,55 @@
 #import <UltraLayout/UltraLayout.h>
 
 /// 
-/// ULLayoutXPosition is a ULAttribute that represents a left-right position, 
-/// as opposed to a dimension or top-bottom position. ULLayoutXPosition, and its sibling classes
-/// ULLayoutYPosition and ULDimensionAttribute, help ensure you don't construct invalid constraints.
+/// ULXPositionAttribute is a ULAttribute that represents a left-right position, 
+/// as opposed to a dimension or top-bottom position. ULXPositionAttribute, and its sibling classes
+/// ULYPositionAttribute and ULDimensionAttribute, help ensure you don't construct invalid constraints.
 /// 
-@interface ULLayoutXPosition : ULAttribute
+@interface ULXPositionAttribute : ULAttribute
 
 @end
 
-@interface ULLayoutXPosition (ULTypeChecking)
+@interface ULXPositionAttribute (ULTypeChecking)
 
-- (NSLayoutConstraint*)constraintForRelation:(NSLayoutRelation)relation toAttribute:(ULLayoutXPosition*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
+- (NSLayoutConstraint*)constraintForRelation:(NSLayoutRelation)relation toAttribute:(ULXPositionAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
 
-- (NSLayoutConstraint*)constraintConstrainingTo:(ULLayoutXPosition*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
-- (NSLayoutConstraint*)constraintConstrainingUpTo:(ULLayoutXPosition*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
-- (NSLayoutConstraint*)constraintConstrainingDownTo:(ULLayoutXPosition*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
+- (NSLayoutConstraint*)constraintConstrainingTo:(ULXPositionAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
+- (NSLayoutConstraint*)constraintConstrainingUpTo:(ULXPositionAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
+- (NSLayoutConstraint*)constraintConstrainingDownTo:(ULXPositionAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
 
-- (NSLayoutConstraint*)constrainTo:(ULLayoutXPosition*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
-- (NSLayoutConstraint*)constrainUpTo:(ULLayoutXPosition*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
-- (NSLayoutConstraint*)constrainDownTo:(ULLayoutXPosition*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
+- (NSLayoutConstraint*)constrainTo:(ULXPositionAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
+- (NSLayoutConstraint*)constrainUpTo:(ULXPositionAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
+- (NSLayoutConstraint*)constrainDownTo:(ULXPositionAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
 
-- (NSLayoutConstraint*)constrainTo:(ULLayoutXPosition*)other;
-- (NSLayoutConstraint*)constrainUpTo:(ULLayoutXPosition*)other;
-- (NSLayoutConstraint*)constrainDownTo:(ULLayoutXPosition*)other;
+- (NSLayoutConstraint*)constrainTo:(ULXPositionAttribute*)other;
+- (NSLayoutConstraint*)constrainUpTo:(ULXPositionAttribute*)other;
+- (NSLayoutConstraint*)constrainDownTo:(ULXPositionAttribute*)other;
 
 @end
 
 /// 
-/// ULLayoutYPosition is a ULAttribute that represents a top-bottom position, 
-/// as opposed to a dimension or left-right position. ULLayoutYPosition, and its sibling classes
-/// ULLayoutXPosition and ULDimensionAttribute, help ensure you don't construct invalid constraints.
+/// ULYPositionAttribute is a ULAttribute that represents a top-bottom position, 
+/// as opposed to a dimension or left-right position. ULYPositionAttribute, and its sibling classes
+/// ULXPositionAttribute and ULDimensionAttribute, help ensure you don't construct invalid constraints.
 /// 
-@interface ULLayoutYPosition : ULAttribute
+@interface ULYPositionAttribute : ULAttribute
 
 @end
 
-@interface ULLayoutYPosition (ULTypeChecking)
+@interface ULYPositionAttribute (ULTypeChecking)
 
-- (NSLayoutConstraint*)constraintForRelation:(NSLayoutRelation)relation toAttribute:(ULLayoutYPosition*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
+- (NSLayoutConstraint*)constraintForRelation:(NSLayoutRelation)relation toAttribute:(ULYPositionAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
 
-- (NSLayoutConstraint*)constraintConstrainingTo:(ULLayoutYPosition*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
-- (NSLayoutConstraint*)constraintConstrainingUpTo:(ULLayoutYPosition*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
-- (NSLayoutConstraint*)constraintConstrainingDownTo:(ULLayoutYPosition*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
+- (NSLayoutConstraint*)constraintConstrainingTo:(ULYPositionAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
+- (NSLayoutConstraint*)constraintConstrainingUpTo:(ULYPositionAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
+- (NSLayoutConstraint*)constraintConstrainingDownTo:(ULYPositionAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
 
-- (NSLayoutConstraint*)constrainTo:(ULLayoutYPosition*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
-- (NSLayoutConstraint*)constrainUpTo:(ULLayoutYPosition*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
-- (NSLayoutConstraint*)constrainDownTo:(ULLayoutYPosition*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
+- (NSLayoutConstraint*)constrainTo:(ULYPositionAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
+- (NSLayoutConstraint*)constrainUpTo:(ULYPositionAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
+- (NSLayoutConstraint*)constrainDownTo:(ULYPositionAttribute*)other offset:(CGFloat)offset priority:(ULLayoutPriority)priority;
 
-- (NSLayoutConstraint*)constrainTo:(ULLayoutYPosition*)other;
-- (NSLayoutConstraint*)constrainUpTo:(ULLayoutYPosition*)other;
-- (NSLayoutConstraint*)constrainDownTo:(ULLayoutYPosition*)other;
+- (NSLayoutConstraint*)constrainTo:(ULYPositionAttribute*)other;
+- (NSLayoutConstraint*)constrainUpTo:(ULYPositionAttribute*)other;
+- (NSLayoutConstraint*)constrainDownTo:(ULYPositionAttribute*)other;
 
 @end

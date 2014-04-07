@@ -9,8 +9,8 @@
 #import "AppKitOrUIKit.h"
 
 @class ULDimensionAttribute;
-@class ULLayoutXPosition;
-@class ULLayoutYPosition;
+@class ULXPositionAttribute;
+@class ULYPositionAttribute;
 
 /// 
 /// ULItem is used to construct ULAttributes for a particular view.
@@ -34,27 +34,27 @@
 @property (readonly, nonatomic) id item;
 
 /// The left edge of the view.
-@property (readonly, nonatomic) ULLayoutXPosition * left;
+@property (readonly, nonatomic) ULXPositionAttribute * left;
 /// The right edge of the view.
-@property (readonly, nonatomic) ULLayoutXPosition * right;
+@property (readonly, nonatomic) ULXPositionAttribute * right;
 /// The top edge of the view.
-@property (readonly, nonatomic) ULLayoutYPosition * top;
+@property (readonly, nonatomic) ULYPositionAttribute * top;
 /// The bottom edge of the view.
-@property (readonly, nonatomic) ULLayoutYPosition * bottom;
+@property (readonly, nonatomic) ULYPositionAttribute * bottom;
 /// The leading edge of the view. (This is left in LTR locales and right in RTL locales.)
-@property (readonly, nonatomic) ULLayoutXPosition * leading;
+@property (readonly, nonatomic) ULXPositionAttribute * leading;
 /// The trailing edge of the view. (This is right in LTR locales and left in RTL locales.)
-@property (readonly, nonatomic) ULLayoutXPosition * trailing;
+@property (readonly, nonatomic) ULXPositionAttribute * trailing;
 /// The width of the view.
 @property (readonly, nonatomic) ULDimensionAttribute * width;
 /// The height of the view.
 @property (readonly, nonatomic) ULDimensionAttribute * height;
 /// The horizontal center of the view.
-@property (readonly, nonatomic) ULLayoutXPosition * centerX;
+@property (readonly, nonatomic) ULXPositionAttribute * centerX;
 /// The vertical center of the view.
-@property (readonly, nonatomic) ULLayoutYPosition * centerY;
+@property (readonly, nonatomic) ULYPositionAttribute * centerY;
 /// The baseline of text in the view.
-@property (readonly, nonatomic) ULLayoutYPosition * baseline;
+@property (readonly, nonatomic) ULYPositionAttribute * baseline;
 
 /// Constrains the current view to match the top and bottom of the other view. Returns the enforcing constraints.
 - (NSArray*)constrainToVerticalEdges:(ULItem*)otherView;

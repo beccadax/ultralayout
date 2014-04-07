@@ -14,7 +14,7 @@
 /// constraints to that attribute.
 /// 
 /// Although the methods in ULAttribute are used frequently, they're almost always invoked
-/// on one of its subclasses—ULDimensionAttribute, ULLayoutXPosition, or ULLayoutYPosition. These 
+/// on one of its subclasses—ULDimensionAttribute, ULXPositionAttribute, or ULYPositionAttribute. These 
 /// subclasses help ensure you don't create nonsensical constraints, by for instance constraining a 
 /// view's left edge to its neighbor's top edge.
 /// 

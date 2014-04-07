@@ -29,14 +29,14 @@
             case NSLayoutAttributeCenterY:
             case NSLayoutAttributeBaseline:
             case NSLayoutAttributeBottom:
-                return [[ULLayoutYPosition alloc] initWithItem:item attribute:attr];
+                return [[ULYPositionAttribute alloc] initWithItem:item attribute:attr];
                 
             case NSLayoutAttributeLeft:
             case NSLayoutAttributeLeading:
             case NSLayoutAttributeCenterX:
             case NSLayoutAttributeTrailing:
             case NSLayoutAttributeRight:
-                return [[ULLayoutXPosition alloc] initWithItem:item attribute:attr];
+                return [[ULXPositionAttribute alloc] initWithItem:item attribute:attr];
         }
     }
     
