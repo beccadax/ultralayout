@@ -25,6 +25,10 @@
 }
 
 - (NSLayoutConstraint*)constraintForAttribute:(ULLayoutAttribute*)other offset:(CGFloat)offset priority:(UILayoutPriority)priority {
+    if(other == nil) {
+        other = [ULLayoutAttribute nonAttribute];
+    }
+    
     NSLayoutConstraint * constraint = [NSLayoutConstraint constraintWithItem:self.item attribute:self.attribute relatedBy:NSLayoutRelationEqual toItem:other.item attribute:other.attribute multiplier:1.0 constant:offset];
     constraint.priority = priority;
     
