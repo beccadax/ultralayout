@@ -10,7 +10,7 @@
 
 @implementation NSLayoutConstraint (ULExtensions)
 
-- (UIView*)ul_commonAncestorOfItems {
+- (UIView *)ul_commonAncestorOfItems {
     if(self.firstItem == nil) {
         return self.secondItem;
     }
@@ -34,7 +34,12 @@
 }
 
 - (instancetype)remove {
-    [[self ul_commonAncestorOfItems] removeConstraint:self];
+    UIView * cursor = [self ul_commonAncestorOfItems];
+    while(cursor) {
+        [cursor removeConstraint:self];
+        cursor = cursor.superview;
+    }
+    
     return self;
 }
 

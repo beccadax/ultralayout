@@ -16,7 +16,7 @@
 - (instancetype)add;
 
 /// 
-/// Removes the constraint from the first common ancestor of its items.
+/// Removes the constraint from the common ancestors of its items.
 /// 
 - (instancetype)remove;
 
