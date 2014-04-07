@@ -12,10 +12,8 @@
 		84B2125718F216E100235C3B /* UltraLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2125618F216E100235C3B /* UltraLayout.m */; };
 		84B2125E18F216E100235C3B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B2125D18F216E100235C3B /* XCTest.framework */; };
 		84B2125F18F216E100235C3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B2124F18F216E100235C3B /* Foundation.framework */; };
-		84B2126118F216E100235C3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B2126018F216E100235C3B /* UIKit.framework */; };
 		84B2126418F216E100235C3B /* libUltraLayout.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B2124C18F216E100235C3B /* libUltraLayout.a */; };
 		84B2126A18F216E100235C3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84B2126818F216E100235C3B /* InfoPlist.strings */; };
-		84B2126C18F216E100235C3B /* UltraLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2126B18F216E100235C3B /* UltraLayoutTests.m */; };
 		84B2127718F2170300235C3B /* UIView+ULInitExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2127618F2170300235C3B /* UIView+ULInitExtensions.m */; };
 		84B2127A18F218FA00235C3B /* ULAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2127918F218FA00235C3B /* ULAttribute.m */; };
 		84B2127D18F2197900235C3B /* NSLayoutConstraint+ULExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2127C18F2197900235C3B /* NSLayoutConstraint+ULExtensions.m */; };
@@ -29,10 +27,7 @@
 		84B2129118F2332200235C3B /* ULItem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84B2128E18F2315C00235C3B /* ULItem.h */; };
 		84B212A318F2500A00235C3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84B212A118F2500A00235C3B /* InfoPlist.strings */; };
 		84B212AD18F2500A00235C3B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B2125D18F216E100235C3B /* XCTest.framework */; };
-		84B212AE18F2500A00235C3B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B2129818F2500A00235C3B /* Cocoa.framework */; };
-		84B212B118F2500A00235C3B /* UltraLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B2129718F2500A00235C3B /* UltraLayout.framework */; };
 		84B212B718F2500A00235C3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84B212B518F2500A00235C3B /* InfoPlist.strings */; };
-		84B212B918F2500A00235C3B /* UltraLayout_MacTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B212B818F2500A00235C3B /* UltraLayout_MacTests.m */; };
 		84B212C018F2508C00235C3B /* UltraLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 84B2125418F216E100235C3B /* UltraLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84B212C118F2508C00235C3B /* AppKitOrUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 84B2128C18F2300A00235C3B /* AppKitOrUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84B212C218F2508C00235C3B /* NSLayoutConstraint+ULExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 84B2127B18F2197900235C3B /* NSLayoutConstraint+ULExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -55,6 +50,10 @@
 		84B212DD18F25A8000235C3B /* ULLayoutPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B212DA18F25A8000235C3B /* ULLayoutPosition.m */; };
 		84B212DE18F25CAA00235C3B /* ULDimensionAttribute.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84B212D418F257CA00235C3B /* ULDimensionAttribute.h */; };
 		84B212DF18F25F0000235C3B /* ULLayoutPosition.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84B212D918F25A8000235C3B /* ULLayoutPosition.h */; };
+		84B212E518F2883100235C3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B212E418F2883100235C3B /* UIKit.framework */; };
+		84B212E618F2884200235C3B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B212D118F253D600235C3B /* Cocoa.framework */; };
+		84B212E718F2884800235C3B /* UltraLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B2129718F2500A00235C3B /* UltraLayout.framework */; };
+		84B2131D18F28CBE00235C3B /* ULMacInitExtensionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2131C18F28CBE00235C3B /* ULMacInitExtensionTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,7 +105,6 @@
 		84B2126018F216E100235C3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		84B2126718F216E100235C3B /* UltraLayoutTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UltraLayoutTests-Info.plist"; sourceTree = "<group>"; };
 		84B2126918F216E100235C3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		84B2126B18F216E100235C3B /* UltraLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UltraLayoutTests.m; sourceTree = "<group>"; };
 		84B2127518F2170300235C3B /* UIView+ULInitExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ULInitExtensions.h"; sourceTree = "<group>"; };
 		84B2127618F2170300235C3B /* UIView+ULInitExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ULInitExtensions.m"; sourceTree = "<group>"; };
 		84B2127818F218FA00235C3B /* ULAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ULAttribute.h; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 		84B212AC18F2500A00235C3B /* UltraLayout MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UltraLayout MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84B212B418F2500A00235C3B /* UltraLayout MacTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UltraLayout MacTests-Info.plist"; sourceTree = "<group>"; };
 		84B212B618F2500A00235C3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		84B212B818F2500A00235C3B /* UltraLayout_MacTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UltraLayout_MacTests.m; sourceTree = "<group>"; };
 		84B212C918F252F700235C3B /* NSView+ULItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+ULItem.h"; sourceTree = "<group>"; };
 		84B212CA18F252F700235C3B /* NSView+ULItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+ULItem.m"; sourceTree = "<group>"; };
 		84B212CD18F2536C00235C3B /* NSView+ULInitExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+ULInitExtensions.h"; sourceTree = "<group>"; };
@@ -140,6 +137,8 @@
 		84B212D518F257CA00235C3B /* ULDimensionAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULDimensionAttribute.m; sourceTree = "<group>"; };
 		84B212D918F25A8000235C3B /* ULLayoutPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ULLayoutPosition.h; sourceTree = "<group>"; };
 		84B212DA18F25A8000235C3B /* ULLayoutPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULLayoutPosition.m; sourceTree = "<group>"; };
+		84B212E418F2883100235C3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		84B2131C18F28CBE00235C3B /* ULMacInitExtensionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULMacInitExtensionTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,9 +154,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B212E518F2883100235C3B /* UIKit.framework in Frameworks */,
 				84B2126418F216E100235C3B /* libUltraLayout.a in Frameworks */,
 				84B2125E18F216E100235C3B /* XCTest.framework in Frameworks */,
-				84B2126118F216E100235C3B /* UIKit.framework in Frameworks */,
 				84B2125F18F216E100235C3B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,9 +173,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B212AE18F2500A00235C3B /* Cocoa.framework in Frameworks */,
+				84B212E718F2884800235C3B /* UltraLayout.framework in Frameworks */,
+				84B212E618F2884200235C3B /* Cocoa.framework in Frameworks */,
 				84B212AD18F2500A00235C3B /* XCTest.framework in Frameworks */,
-				84B212B118F2500A00235C3B /* UltraLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +208,7 @@
 		84B2124E18F216E100235C3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84B212E418F2883100235C3B /* UIKit.framework */,
 				84B212D118F253D600235C3B /* Cocoa.framework */,
 				84B2124F18F216E100235C3B /* Foundation.framework */,
 				84B2125D18F216E100235C3B /* XCTest.framework */,
@@ -243,7 +243,6 @@
 		84B2126518F216E100235C3B /* UltraLayoutTests */ = {
 			isa = PBXGroup;
 			children = (
-				84B2126B18F216E100235C3B /* UltraLayoutTests.m */,
 				84B2126618F216E100235C3B /* Supporting Files */,
 			);
 			path = UltraLayoutTests;
@@ -323,8 +322,8 @@
 		84B212B218F2500A00235C3B /* UltraLayout MacTests */ = {
 			isa = PBXGroup;
 			children = (
-				84B212B818F2500A00235C3B /* UltraLayout_MacTests.m */,
 				84B212B318F2500A00235C3B /* Supporting Files */,
+				84B2131C18F28CBE00235C3B /* ULMacInitExtensionTests.m */,
 			);
 			path = "UltraLayout MacTests";
 			sourceTree = "<group>";
@@ -516,7 +515,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B2126C18F216E100235C3B /* UltraLayoutTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,7 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B212B918F2500A00235C3B /* UltraLayout_MacTests.m in Sources */,
+				84B2131D18F28CBE00235C3B /* ULMacInitExtensionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,7 +679,6 @@
 		84B2127318F216E100235C3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UltraLayout Mac.framework/Versions/A/UltraLayout Mac";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -694,6 +691,10 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "UltraLayoutTests/UltraLayoutTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -703,7 +704,6 @@
 		84B2127418F216E100235C3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UltraLayout Mac.framework/Versions/A/UltraLayout Mac";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -712,6 +712,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UltraLayout/UltraLayout-Prefix.pch";
 				INFOPLIST_FILE = "UltraLayoutTests/UltraLayoutTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -770,7 +774,7 @@
 		84B212BE18F2500B00235C3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UltraLayout Mac.framework/Versions/A/UltraLayout Mac";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UltraLayout.framework/Versions/A/UltraLayout";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -785,6 +789,10 @@
 				);
 				INFOPLIST_FILE = "UltraLayout MacTests/UltraLayout MacTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -795,7 +803,7 @@
 		84B212BF18F2500B00235C3B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UltraLayout Mac.framework/Versions/A/UltraLayout Mac";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UltraLayout.framework/Versions/A/UltraLayout";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -807,6 +815,10 @@
 				GCC_PREFIX_HEADER = "UltraLayout Mac/UltraLayout Mac-Prefix.pch";
 				INFOPLIST_FILE = "UltraLayout MacTests/UltraLayout MacTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
