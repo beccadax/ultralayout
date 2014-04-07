@@ -13,11 +13,11 @@
 @implementation UIView (ULLayoutExtensions)
 
 - (NSArray*)constrainToVerticalOfView:(UIView*)otherView {
-    return @[ [self.top constrainTo:otherView.top], [self.bottom constrainTo:otherView.bottom] ];
+    return @[ [self.ul.top constrainTo:otherView.ul.top], [self.ul.bottom constrainTo:otherView.ul.bottom] ];
 }
 
 - (NSArray*)constrainToHorizontalOfView:(UIView*)otherView {
-    return @[ [self.left constrainTo:otherView.left], [self.right constrainTo:otherView.right] ];
+    return @[ [self.ul.left constrainTo:otherView.ul.left], [self.ul.right constrainTo:otherView.ul.right] ];
 }
 
 - (NSArray*)constrainToView:(UIView*)otherView {

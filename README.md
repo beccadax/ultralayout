@@ -6,24 +6,24 @@ UltraLayout allows you to easily create autolayout constraints with compile-time
 For example:
 
     // Make the right edge of leftView always meet the left edge of rightView
-    [leftView.right constrainTo:rightView.left];
+    [leftView.ul.right constrainTo:rightView.ul.left];
     
     // Make the tops and bottoms of leftView and rightView line up
     [leftView constrainToVerticalOfView:rightView];
     
     // Make leftView and rightView fill the width of their superview
-    [leftView.left constrainTo:leftView.superview.left];
-    [rightView.right constrainTo:rightView.superview.right];
+    [leftView.ul.left constrainTo:leftView.superview.ul.left];
+    [rightView.ul.right constrainTo:rightView.superview.ul.right];
     
     // Stick them to the vertical center and give them a fixed maximum height.
-    [leftView.centerY constrainTo:leftView.superview.centerY];
-    [leftView.height constrainTo:leftView.superview.height offset:0 priority:UILayoutPriorityDefaultHigh];
-    [leftView.height constrainUpToValue:100];
+    [leftView.ul.centerY constrainTo:leftView.superview.ul.centerY];
+    [leftView.ul.height constrainTo:leftView.superview.ul.height offset:0 priority:UILayoutPriorityDefaultHigh];
+    [leftView.ul.height constrainUpToValue:100];
 
 UltraLayout also adds a new UIView initializer that returns autolayout-ready views:
 
     UIView * myView = [[UIView alloc] initWithSuperview:anotherView];
-    [myView.left constrainTo:anotherView.left];
+    [myView.ul.left constrainTo:anotherView.ul.left];
 
 And NSLayoutConstraint methods to easily add a constraint:
 
