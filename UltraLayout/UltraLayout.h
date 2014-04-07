@@ -19,6 +19,6 @@
 
 #else
 
-#error "Mac version not yet implemented"
+#warning "Mac version not fully implemented"
 
 #endif
