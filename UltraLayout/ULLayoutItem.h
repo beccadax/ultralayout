@@ -28,4 +28,8 @@
 @property (readonly, nonatomic) ULLayoutAttribute * centerY;
 @property (readonly, nonatomic) ULLayoutAttribute * baseline;
 
+- (NSArray*)constrainToVertical:(ULLayoutItem*)otherView;
+- (NSArray*)constrainToHorizontal:(ULLayoutItem*)otherView;
+- (NSArray*)constrainTo:(ULLayoutItem*)otherView;
+
 @end
