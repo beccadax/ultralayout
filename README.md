@@ -7,7 +7,7 @@ For example:
 
     // Put leftView to the right of rightView, touching.
     [leftView.ul constrainToBeside:rightView.ul];
-    // Equvialent to: [leftView.ul.right constrainTo:rightView.ul.left];
+    // Equivalent to: [leftView.ul.right constrainTo:rightView.ul.left];
     
     // Make the tops and bottoms of leftView and rightView line up
     [leftView.ul constrainToVerticalEdges:rightView.ul];
