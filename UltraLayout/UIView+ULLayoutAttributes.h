@@ -12,6 +12,10 @@
 
 @interface UIView (ULLayoutAttributes)
 
+/// 
+/// Accesses an UltraLayout item object for the current view. The ULLayoutItem can be used 
+/// to add autolayout constraints in various convenient ways.
+/// 
 @property (readonly, nonatomic) ULLayoutItem * ul;
 
 @end
