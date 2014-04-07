@@ -10,7 +10,14 @@
 
 @interface NSLayoutConstraint (ULExtensions)
 
+/// 
+/// Adds the constraint to the first common ancestor of its items.
+/// 
 - (instancetype)add;
+
+/// 
+/// Removes the constraint from the first common ancestor of its items.
+/// 
 - (instancetype)remove;
 
 @end
