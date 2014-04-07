@@ -166,7 +166,6 @@
 				84B2128618F21EC100235C3B /* README.md */,
 				84B2125118F216E100235C3B /* UltraLayout */,
 				84B2126518F216E100235C3B /* UltraLayoutTests */,
-				84B2129E18F2500A00235C3B /* UltraLayout Mac */,
 				84B212B218F2500A00235C3B /* UltraLayout MacTests */,
 				84B2124E18F216E100235C3B /* Frameworks */,
 				84B2124D18F216E100235C3B /* Products */,
@@ -204,7 +203,7 @@
 				84B2128C18F2300A00235C3B /* AppKitOrUIKit.h */,
 				84B2128518F21EA200235C3B /* Common */,
 				84B2128418F21CD900235C3B /* iOS */,
-				84B2125218F216E100235C3B /* Supporting Files */,
+				84B2129E18F2500A00235C3B /* Mac */,
 			);
 			path = UltraLayout;
 			sourceTree = "<group>";
@@ -242,6 +241,7 @@
 				84B2127618F2170300235C3B /* UIView+ULInitExtensions.m */,
 				84B2127E18F21A1E00235C3B /* UIView+ULLayoutAttributes.h */,
 				84B2127F18F21A1E00235C3B /* UIView+ULLayoutAttributes.m */,
+				84B2125218F216E100235C3B /* Supporting Files */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -269,13 +269,14 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		84B2129E18F2500A00235C3B /* UltraLayout Mac */ = {
+		84B2129E18F2500A00235C3B /* Mac */ = {
 			isa = PBXGroup;
 			children = (
 				84B2129F18F2500A00235C3B /* Supporting Files */,
 			);
+			name = Mac;
 			path = "UltraLayout Mac";
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		84B2129F18F2500A00235C3B /* Supporting Files */ = {
 			isa = PBXGroup;
