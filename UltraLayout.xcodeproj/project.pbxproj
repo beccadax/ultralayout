@@ -27,7 +27,6 @@
 		84B2128D18F2306400235C3B /* AppKitOrUIKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84B2128C18F2300A00235C3B /* AppKitOrUIKit.h */; };
 		84B2129018F2315C00235C3B /* ULLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2128F18F2315C00235C3B /* ULLayoutItem.m */; };
 		84B2129118F2332200235C3B /* ULLayoutItem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84B2128E18F2315C00235C3B /* ULLayoutItem.h */; };
-		84B2129918F2500A00235C3B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B2129818F2500A00235C3B /* Cocoa.framework */; };
 		84B212A318F2500A00235C3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84B212A118F2500A00235C3B /* InfoPlist.strings */; };
 		84B212AD18F2500A00235C3B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B2125D18F216E100235C3B /* XCTest.framework */; };
 		84B212AE18F2500A00235C3B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B2129818F2500A00235C3B /* Cocoa.framework */; };
@@ -45,6 +44,7 @@
 		84B212C818F250D100235C3B /* ULLayoutAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B2127918F218FA00235C3B /* ULLayoutAttribute.m */; };
 		84B212CB18F252F700235C3B /* NSView+ULLayoutAttributes.h in Headers */ = {isa = PBXBuildFile; fileRef = 84B212C918F252F700235C3B /* NSView+ULLayoutAttributes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84B212CC18F252F700235C3B /* NSView+ULLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B212CA18F252F700235C3B /* NSView+ULLayoutAttributes.m */; };
+		84B212D218F253D600235C3B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B212D118F253D600235C3B /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +121,7 @@
 		84B212B818F2500A00235C3B /* UltraLayout_MacTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UltraLayout_MacTests.m; sourceTree = "<group>"; };
 		84B212C918F252F700235C3B /* NSView+ULLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSView+ULLayoutAttributes.h"; sourceTree = "<group>"; };
 		84B212CA18F252F700235C3B /* NSView+ULLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSView+ULLayoutAttributes.m"; sourceTree = "<group>"; };
+		84B212D118F253D600235C3B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B2129918F2500A00235C3B /* Cocoa.framework in Frameworks */,
+				84B212D218F253D600235C3B /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +191,7 @@
 		84B2124E18F216E100235C3B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84B212D118F253D600235C3B /* Cocoa.framework */,
 				84B2124F18F216E100235C3B /* Foundation.framework */,
 				84B2125D18F216E100235C3B /* XCTest.framework */,
 				84B2126018F216E100235C3B /* UIKit.framework */,
