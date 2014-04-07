@@ -76,4 +76,20 @@
             [self constrainToVertical:otherView]];
 }
 
+- (NSLayoutConstraint *)constrainToBeside:(ULLayoutItem *)item {
+    return [self constrainToBeside:item spacing:0];
+}
+
+- (NSLayoutConstraint *)constrainToBeside:(ULLayoutItem *)item spacing:(CGFloat)spacing {
+    return [self.right constrainTo:item.left offset:spacing priority:UILayoutPriorityRequired];
+}
+
+- (NSLayoutConstraint *)constrainToAbove:(ULLayoutItem *)item {
+    return [self constrainToAbove:item spacing:0];
+}
+
+- (NSLayoutConstraint *)constrainToAbove:(ULLayoutItem *)item spacing:(CGFloat)spacing {
+    return [self.bottom constrainTo:item.top offset:spacing priority:UILayoutPriorityRequired];
+}
+
 @end

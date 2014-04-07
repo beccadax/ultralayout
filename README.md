@@ -5,8 +5,9 @@ UltraLayout allows you to easily create autolayout constraints with compile-time
 
 For example:
 
-    // Make the right edge of leftView always meet the left edge of rightView
-    [leftView.ul.right constrainTo:rightView.ul.left];
+    // Put leftView to the right of rightView, touching.
+    [leftView.ul constrainToBeside:rightView.ul];
+    // Equvialent to: [leftView.ul.right constrainTo:rightView.ul.left];
     
     // Make the tops and bottoms of leftView and rightView line up
     [leftView.ul constrainToVertical:rightView.ul];

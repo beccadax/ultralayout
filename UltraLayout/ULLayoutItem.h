@@ -32,4 +32,9 @@
 - (NSArray*)constrainToHorizontal:(ULLayoutItem*)otherView;
 - (NSArray*)constrainTo:(ULLayoutItem*)otherView;
 
+- (NSLayoutConstraint *)constrainToBeside:(ULLayoutItem *)item;
+- (NSLayoutConstraint *)constrainToBeside:(ULLayoutItem *)item spacing:(CGFloat)spacing;
+- (NSLayoutConstraint *)constrainToAbove:(ULLayoutItem *)item;
+- (NSLayoutConstraint *)constrainToAbove:(ULLayoutItem *)item spacing:(CGFloat)spacing;
+
 @end
