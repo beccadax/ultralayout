@@ -11,9 +11,19 @@
 #import "NSLayoutConstraint+ULExtensions.h"
 #import "ULLayoutItem.h"
 
+#import "ULLayoutDimension.h"
+
 @implementation ULLayoutAttribute
 
 - (id)initWithItem:(id)item attribute:(NSLayoutAttribute)attr {
+    // If we're constructing the superclass...
+    if(self.class == [ULLayoutAttribute class]) {
+        // Try to choose a more specific subclass.
+        if(attr == NSLayoutAttributeWidth || attr == NSLayoutAttributeHeight) {
+            return [[ULLayoutDimension alloc] initWithItem:item attribute:attr];
+        }
+    }
+    
     if((self = [super init])) {
         if([item isKindOfClass:ULLayoutItem.class]) {
             item = [(ULLayoutItem*)item item];
