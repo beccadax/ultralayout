@@ -10,7 +10,7 @@ For example:
     // Equvialent to: [leftView.ul.right constrainTo:rightView.ul.left];
     
     // Make the tops and bottoms of leftView and rightView line up
-    [leftView.ul constrainToVertical:rightView.ul];
+    [leftView.ul constrainToVerticalEdges:rightView.ul];
     
     // Make leftView and rightView fill the width of their superview
     [leftView.ul.left constrainToSuperview];

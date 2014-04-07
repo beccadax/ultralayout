@@ -63,17 +63,17 @@
     return [[ULLayoutAttribute alloc] initWithItem:self.item attribute:NSLayoutAttributeBaseline];
 }
 
-- (NSArray*)constrainToVertical:(ULLayoutItem *)otherView {
+- (NSArray*)constrainToVerticalEdges:(ULLayoutItem *)otherView {
     return @[ [self.top constrainTo:otherView.top], [self.bottom constrainTo:otherView.bottom] ];
 }
 
-- (NSArray*)constrainToHorizontal:(ULLayoutItem *)otherView {
+- (NSArray*)constrainToHorizontalEdges:(ULLayoutItem *)otherView {
     return @[ [self.left constrainTo:otherView.left], [self.right constrainTo:otherView.right] ];
 }
 
-- (NSArray*)constrainTo:(ULLayoutItem *)otherView {
-    return [[self constrainToHorizontal:otherView] arrayByAddingObjectsFromArray:
-            [self constrainToVertical:otherView]];
+- (NSArray*)constrainToEdges:(ULLayoutItem *)otherView {
+    return [[self constrainToHorizontalEdges:otherView] arrayByAddingObjectsFromArray:
+            [self constrainToVerticalEdges:otherView]];
 }
 
 - (NSLayoutConstraint *)constrainToBeside:(ULLayoutItem *)item {
