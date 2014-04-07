@@ -13,6 +13,9 @@
 /// You can use methods on the attribute to construct, and in some cases automatically add, 
 /// constraints to that attribute.
 /// 
+/// Although the methods in ULLayoutAttribute are used frequently, they're almost always invoked
+/// on one of its subclasses—ULLayoutDimension, ULLayoutXPosition, or ULLayoutYPosition.
+/// 
 @interface ULLayoutAttribute : NSObject
 
 /// Returns an attribute for the given view and NSLayoutAttribute. Instead of using this method, you 

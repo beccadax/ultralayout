@@ -10,9 +10,8 @@
 
 /// 
 /// ULLayoutDimension is a ULLayoutAttribute that represents a size (like width or height), 
-/// as opposed to a position. Many constraints don't make sense when constructed with a 
-/// dimension and a position; ULLayoutDimension helps ensure you don't construct such a 
-/// constraint.
+/// as opposed to a position. ULLayoutDimension, and its sibling classes
+/// ULLayoutXPosition and ULLayoutYPosition, help ensure you don't construct invalid constraints.
 /// 
 @interface ULLayoutDimension : ULLayoutAttribute
 
