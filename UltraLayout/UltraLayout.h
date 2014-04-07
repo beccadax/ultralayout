@@ -17,11 +17,11 @@
 #if TARGET_OS_IPHONE
 
 #import "UIView+ULInitExtensions.h"
-#import "UIView+ULLayoutAttributes.h"
+#import "UIView+ULItem.h"
 
 #else
 
 #import "NSView+ULInitExtensions.h"
-#import "NSView+ULLayoutAttributes.h"
+#import "NSView+ULItem.h"
 
 #endif

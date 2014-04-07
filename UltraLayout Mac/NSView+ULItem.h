@@ -1,5 +1,5 @@
 //
-//  NSView+ULLayoutAttributes.h
+//  NSView+ULItem.h
 //  UltraLayout
 //
 //  Created by Brent Royal-Gordon on 4/6/14.
@@ -10,7 +10,7 @@
 
 @class ULItem;
 
-@interface NSView (ULLayoutAttributes)
+@interface NSView (ULItem)
 
 /// 
 /// Accesses an UltraLayout item object for the current view. The ULItem can be used 
