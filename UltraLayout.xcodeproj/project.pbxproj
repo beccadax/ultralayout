@@ -325,8 +325,8 @@
 			isa = PBXGroup;
 			children = (
 				84B212B318F2500A00235C3B /* Supporting Files */,
-				84B2131A18F28CAD00235C3B /* ULMacLayoutConstraintAddRemoveTests.m */,
 				84B2131C18F28CBE00235C3B /* ULMacInitExtensionTests.m */,
+				84B2131A18F28CAD00235C3B /* ULMacLayoutConstraintAddRemoveTests.m */,
 			);
 			path = "UltraLayout MacTests";
 			sourceTree = "<group>";
