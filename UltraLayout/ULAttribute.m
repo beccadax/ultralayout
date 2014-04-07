@@ -37,6 +37,10 @@
             case NSLayoutAttributeTrailing:
             case NSLayoutAttributeRight:
                 return [[ULXPositionAttribute alloc] initWithItem:item attribute:attr];
+                
+            case NSLayoutAttributeNotAnAttribute:
+                // Handled by ULAttribute
+                break;
         }
     }
     
