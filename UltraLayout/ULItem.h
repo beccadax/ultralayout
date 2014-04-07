@@ -13,10 +13,10 @@
 @class ULLayoutYPosition;
 
 /// 
-/// ULItem is used to construct ULLayoutAttributes for a particular view.
+/// ULItem is used to construct ULAttributes for a particular view.
 /// 
 /// A view's ULItem is accessed through its ul property. From the item, you can 
-/// access ULLayoutAttributes for the view's various NSLayoutAttributes. You can also 
+/// access ULAttributes for the view's various NSLayoutAttributes. You can also 
 /// use a small suite of methods to constrain it to other items in various common ways, 
 /// such as making the views sit next to each other or match some or all of their dimensions.
 /// 

@@ -9,11 +9,11 @@
 #import <UltraLayout/UltraLayout.h>
 
 /// 
-/// ULLayoutXPosition is a ULLayoutAttribute that represents a left-right position, 
+/// ULLayoutXPosition is a ULAttribute that represents a left-right position, 
 /// as opposed to a dimension or top-bottom position. ULLayoutXPosition, and its sibling classes
 /// ULLayoutYPosition and ULLayoutDimension, help ensure you don't construct invalid constraints.
 /// 
-@interface ULLayoutXPosition : ULLayoutAttribute
+@interface ULLayoutXPosition : ULAttribute
 
 @end
 
@@ -36,11 +36,11 @@
 @end
 
 /// 
-/// ULLayoutYPosition is a ULLayoutAttribute that represents a top-bottom position, 
+/// ULLayoutYPosition is a ULAttribute that represents a top-bottom position, 
 /// as opposed to a dimension or left-right position. ULLayoutYPosition, and its sibling classes
 /// ULLayoutXPosition and ULLayoutDimension, help ensure you don't construct invalid constraints.
 /// 
-@interface ULLayoutYPosition : ULLayoutAttribute
+@interface ULLayoutYPosition : ULAttribute
 
 @end
 

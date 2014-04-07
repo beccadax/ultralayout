@@ -10,7 +10,7 @@
 
 #import "NSLayoutConstraint+ULExtensions.h"
 #import "ULItem.h"
-#import "ULLayoutAttribute.h"
+#import "ULAttribute.h"
 #import "ULLayoutDimension.h"
 #import "ULLayoutPosition.h"
 

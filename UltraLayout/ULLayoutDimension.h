@@ -9,11 +9,11 @@
 #import <UltraLayout/UltraLayout.h>
 
 /// 
-/// ULLayoutDimension is a ULLayoutAttribute that represents a size (like width or height), 
+/// ULLayoutDimension is a ULAttribute that represents a size (like width or height), 
 /// as opposed to a position. ULLayoutDimension, and its sibling classes
 /// ULLayoutXPosition and ULLayoutYPosition, help ensure you don't construct invalid constraints.
 /// 
-@interface ULLayoutDimension : ULLayoutAttribute
+@interface ULLayoutDimension : ULAttribute
 
 /// Constrains this attribute to always match the given value. The constraint is required, and is automatically added.
 - (NSLayoutConstraint*)constrainToValue:(CGFloat)value;
