@@ -89,4 +89,32 @@
     return [self constrainDownTo:[self.class nonAttribute] offset:value priority:UILayoutPriorityRequired];
 }
 
+- (ULLayoutAttribute *)superviewAttribute {
+    return [[ULLayoutAttribute alloc] initWithItem:[self.item superview] attribute:self.attribute];
+}
+
+- (NSLayoutConstraint *)constrainToSuperviewWithOffset:(CGFloat)offset priority:(UILayoutPriority)priority {
+    return [self constrainTo:self.superviewAttribute offset:offset priority:priority];
+}
+
+- (NSLayoutConstraint *)constrainUpToSuperviewWithOffset:(CGFloat)offset priority:(UILayoutPriority)priority {
+    return [self constrainUpTo:self.superviewAttribute offset:offset priority:priority];    
+}
+
+- (NSLayoutConstraint *)constrainDownToSuperviewWithOffset:(CGFloat)offset priority:(UILayoutPriority)priority {
+    return [self constrainDownTo:self.superviewAttribute offset:offset priority:priority];
+}
+
+- (NSLayoutConstraint *)constrainToSuperview {
+    return [self constrainToSuperviewWithOffset:0 priority:UILayoutPriorityRequired];
+}
+
+- (NSLayoutConstraint *)constrainUpToSuperview {
+    return [self constrainUpToSuperviewWithOffset:0 priority:UILayoutPriorityRequired];
+}
+
+- (NSLayoutConstraint *)constrainDownToSuperview {
+    return [self constrainDownToSuperviewWithOffset:0 priority:UILayoutPriorityRequired];
+}
+
 @end

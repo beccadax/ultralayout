@@ -13,12 +13,12 @@ For example:
     [leftView.ul constrainToVertical:rightView.ul];
     
     // Make leftView and rightView fill the width of their superview
-    [leftView.ul.left constrainTo:leftView.superview.ul.left];
-    [rightView.ul.right constrainTo:rightView.superview.ul.right];
+    [leftView.ul.left constrainToSuperview];
+    [rightView.ul.right constrainToSuperview];
     
     // Stick them to the vertical center and give them a fixed maximum height.
-    [leftView.ul.centerY constrainTo:leftView.superview.ul.centerY];
-    [leftView.ul.height constrainTo:leftView.superview.ul.height offset:0 priority:UILayoutPriorityDefaultHigh];
+    [leftView.ul.centerY constrainToSuperview];
+    [leftView.ul.height constrainToSuperviewWithOffset:0 priority:UILayoutPriorityDefaultHigh];
     [leftView.ul.height constrainUpToValue:100];
 
 UltraLayout also adds a new UIView initializer that returns autolayout-ready views:

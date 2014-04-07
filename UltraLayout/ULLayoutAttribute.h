@@ -35,4 +35,14 @@
 - (NSLayoutConstraint*)constrainUpToValue:(CGFloat)value;
 - (NSLayoutConstraint*)constrainDownToValue:(CGFloat)value;
 
+@property (readonly, nonatomic) ULLayoutAttribute * superviewAttribute;
+
+- (NSLayoutConstraint *)constrainToSuperviewWithOffset:(CGFloat)offset priority:(UILayoutPriority)priority;
+- (NSLayoutConstraint *)constrainUpToSuperviewWithOffset:(CGFloat)offset priority:(UILayoutPriority)priority;
+- (NSLayoutConstraint *)constrainDownToSuperviewWithOffset:(CGFloat)offset priority:(UILayoutPriority)priority;
+
+- (NSLayoutConstraint *)constrainToSuperview;
+- (NSLayoutConstraint *)constrainUpToSuperview;
+- (NSLayoutConstraint *)constrainDownToSuperview;
+
 @end
