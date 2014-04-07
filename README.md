@@ -42,7 +42,7 @@ Author
 
 Brent Royal-Gordon, [Architechies](http://architechies.com).
 
-File issues or pull requests at the [UltraLayout GitHub project]().
+File issues or pull requests at the [UltraLayout GitHub project](http://github.com/brentdax/ultralayout).
 
 License
 -----
