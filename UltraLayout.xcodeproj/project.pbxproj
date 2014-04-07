@@ -145,6 +145,7 @@
 		84B2131C18F28CBE00235C3B /* ULMacInitExtensionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULMacInitExtensionTests.m; sourceTree = "<group>"; };
 		84B2131E18F292F200235C3B /* ULMacItemTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULMacItemTests.m; sourceTree = "<group>"; };
 		84B2132018F29F9F00235C3B /* ULMacAttributeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ULMacAttributeTests.m; sourceTree = "<group>"; };
+		84B2132218F3678D00235C3B /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +192,7 @@
 		84B2124318F216E100235C3B = {
 			isa = PBXGroup;
 			children = (
+				84B2132218F3678D00235C3B /* .travis.yml */,
 				84B2128618F21EC100235C3B /* README.md */,
 				84B2125118F216E100235C3B /* UltraLayout */,
 				84B2126518F216E100235C3B /* UltraLayoutTests */,
