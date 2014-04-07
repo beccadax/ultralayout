@@ -19,8 +19,13 @@
     // If we're constructing the superclass...
     if(self.class == [ULLayoutAttribute class]) {
         // Try to choose a more specific subclass.
-        if(attr == NSLayoutAttributeWidth || attr == NSLayoutAttributeHeight) {
-            return [[ULLayoutDimension alloc] initWithItem:item attribute:attr];
+        switch(attr) {
+            case NSLayoutAttributeHeight:
+            case NSLayoutAttributeWidth:
+                return [[ULLayoutDimension alloc] initWithItem:item attribute:attr];
+                
+            default:
+                break;
         }
     }
     
