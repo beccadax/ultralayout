@@ -1,7 +1,3 @@
 language: objective-c
 xcode_project: UltraLayout.xcodeproj
 xcode_scheme: UltraLayout Mac
-
-before_install:
-    - brew update
-    - brew install --HEAD xctool
