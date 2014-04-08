@@ -34,24 +34,24 @@
 - (void)testFixedValue {
     NSLayoutConstraint * constraint = [self.view.ul.width constrainToValue:50];
     XCTAssertEqualObjects(constraint.firstItem, self.view, @"-constrainToValue: constrains to the right item");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeWidth, @"-constrainToValue: constrains the right attribute");
+    XCTAssertEqual((long)constraint.firstAttribute, (long)NSLayoutAttributeWidth, @"-constrainToValue: constrains the right attribute");
     XCTAssertNil(constraint.secondItem, @"-constrainToValue: gives no second item");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeNotAnAttribute, @"-constrainToValue: gives no second attribute");
+    XCTAssertEqual((long)constraint.secondAttribute, (long)NSLayoutAttributeNotAnAttribute, @"-constrainToValue: gives no second attribute");
     
-    XCTAssertEqual(constraint.relation, NSLayoutRelationEqual, @"Creates equal constraint");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityRequired, @"Creates required constraint by default");
+    XCTAssertEqual((long)constraint.relation, (long)NSLayoutRelationEqual, @"Creates equal constraint");
+    XCTAssertEqual((long)constraint.priority, (long)NSLayoutPriorityRequired, @"Creates required constraint by default");
     
     NSLayoutConstraint * constraint2 = [self.view.ul.width constrainUpToValue:75];
     
-    XCTAssertEqual(constraint2.relation, NSLayoutRelationLessThanOrEqual, @"-constrainUpToValue: creates a less-than-or-equal constraint");
+    XCTAssertEqual((long)constraint2.relation, (long)NSLayoutRelationLessThanOrEqual, @"-constrainUpToValue: creates a less-than-or-equal constraint");
     
     NSLayoutConstraint * constraint3 = [self.view.ul.width constrainDownToValue:25];
     
-    XCTAssertEqual(constraint3.relation, NSLayoutRelationGreaterThanOrEqual, @"-constrainDownToValue: creates a greater-than-or-equal constraint");
+    XCTAssertEqual((long)constraint3.relation, (long)NSLayoutRelationGreaterThanOrEqual, @"-constrainDownToValue: creates a greater-than-or-equal constraint");
     
     [self.view layoutSubtreeIfNeeded];
     
-    XCTAssertEqual(self.view.bounds.size.width, 50, @"Constrains width to intended value");
+    XCTAssertEqual((double)self.view.bounds.size.width, (double)50, @"Constrains width to intended value");
 }
 
 - (void)testConstraintForRelation {
