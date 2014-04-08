@@ -1,3 +1,7 @@
 language: objective-c
 xcode_project: UltraLayout.xcodeproj
 xcode_scheme: UltraLayout Mac
+
+script:
+    - xcodebuild test -scheme 'UltraLayout Mac' SRCROOT=build OBJROOT=build SHARED_PRECOMPS_DIR=build
+    
