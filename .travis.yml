@@ -5,6 +5,6 @@ xcode_scheme: UltraLayout Mac
 before_install:
     - sudo easy_install cpp-coveralls
 script:
-    - xcodebuild test -scheme 'UltraLayout Mac' SRCROOT=build OBJROOT=build SHARED_PRECOMPS_DIR=build
+    - xcodebuild test -scheme 'UltraLayout Mac' SRCROOT=build OBJROOT=build SHARED_PRECOMPS_DIR=build GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
 after_success:
     - coveralls -x '.m'
