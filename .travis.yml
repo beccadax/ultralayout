@@ -2,6 +2,9 @@ language: objective-c
 xcode_project: UltraLayout.xcodeproj
 xcode_scheme: UltraLayout Mac
 
+before_install:
+    - sudo easy_install cpp-coveralls
 script:
     - xcodebuild test -scheme 'UltraLayout Mac' SRCROOT=build OBJROOT=build SHARED_PRECOMPS_DIR=build
-    
+after_success:
+    - coveralls -x '.m'
