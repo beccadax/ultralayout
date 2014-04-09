@@ -31,243 +31,107 @@
     [super tearDown];
 }
 
+#define ULTAssertConstraintProperties(CONSTRAINT, FIRST_ITEM, FIRST_ATTR, SECOND_ITEM, SECOND_ATTR, RELATION, CONSTANT, PRIORITY, description) do { \
+    XCTAssertEqualObjects(CONSTRAINT.firstItem, FIRST_ITEM, @"%@ has right first item", description); \
+    XCTAssertEqual(CONSTRAINT.firstAttribute, (NSLayoutAttribute)FIRST_ATTR, @"%@ has right first attribute", description); \
+    XCTAssertEqualObjects(CONSTRAINT.secondItem, SECOND_ITEM, @"%@ has right second item", description); \
+    XCTAssertEqual(CONSTRAINT.secondAttribute, (NSLayoutAttribute)SECOND_ATTR, @"%@ has right second attribute", description); \
+    XCTAssertEqual(CONSTRAINT.relation, (NSLayoutRelation)RELATION, @"%@ has right relation", description); \
+    XCTAssertEqual(CONSTRAINT.constant, (CGFloat)CONSTANT, @"%@ has right constant", description); \
+    XCTAssertEqual(CONSTRAINT.priority, (NSLayoutPriority)PRIORITY, @"%@ has right priority", description); } while(0)
+
 - (void)testFixedValue {
     NSLayoutConstraint * constraint = [self.view.ul.width constrainToValue:50];
-    XCTAssertEqualObjects(constraint.firstItem, self.view, @"-constrainToValue: constrains to the right item");
-    XCTAssertEqual((long)constraint.firstAttribute, (long)NSLayoutAttributeWidth, @"-constrainToValue: constrains the right attribute");
-    XCTAssertNil(constraint.secondItem, @"-constrainToValue: gives no second item");
-    XCTAssertEqual((long)constraint.secondAttribute, (long)NSLayoutAttributeNotAnAttribute, @"-constrainToValue: gives no second attribute");
-    
-    XCTAssertEqual((long)constraint.relation, (long)NSLayoutRelationEqual, @"Creates equal constraint");
-    XCTAssertEqual((long)constraint.priority, (long)NSLayoutPriorityRequired, @"Creates required constraint by default");
+    ULTAssertConstraintProperties(constraint, self.view, NSLayoutAttributeWidth, nil, NSLayoutAttributeNotAnAttribute, NSLayoutRelationEqual, 50, NSLayoutPriorityRequired, @"-constrainToValue:50");
     
     NSLayoutConstraint * constraint2 = [self.view.ul.width constrainUpToValue:75];
-    
-    XCTAssertEqual((long)constraint2.relation, (long)NSLayoutRelationLessThanOrEqual, @"-constrainUpToValue: creates a less-than-or-equal constraint");
+    ULTAssertConstraintProperties(constraint2, self.view, NSLayoutAttributeWidth, nil, NSLayoutAttributeNotAnAttribute, NSLayoutRelationLessThanOrEqual, 75, NSLayoutPriorityRequired, @"-constrainUpToValue:75");
     
     NSLayoutConstraint * constraint3 = [self.view.ul.width constrainDownToValue:25];
-    
-    XCTAssertEqual((long)constraint3.relation, (long)NSLayoutRelationGreaterThanOrEqual, @"-constrainDownToValue: creates a greater-than-or-equal constraint");
-    
+    ULTAssertConstraintProperties(constraint3, self.view, NSLayoutAttributeWidth, nil, NSLayoutAttributeNotAnAttribute, NSLayoutRelationGreaterThanOrEqual, 25, NSLayoutPriorityRequired, @"-constrainDownToValue:25");
+        
     [self.view layoutSubtreeIfNeeded];
     
-    XCTAssertEqual((double)self.view.bounds.size.width, (double)50, @"Constrains width to intended value");
+    XCTAssertEqual((CGFloat)self.view.bounds.size.width, (CGFloat)50, @"Constrains width to intended value");
 }
 
 - (void)testConstraintForRelation {
     NSLayoutConstraint * constraint = [self.view.ul.width constraintForRelation:NSLayoutRelationEqual toAttribute:self.subview.ul.height offset:10 priority:NSLayoutPriorityDefaultHigh];
+    ULTAssertConstraintProperties(constraint, self.view, NSLayoutAttributeWidth, self.subview, NSLayoutAttributeHeight, NSLayoutRelationEqual, 10.0, NSLayoutPriorityDefaultHigh, @"-constraintForRelation:... with second attribute");
     
-    XCTAssertEqualObjects(constraint.firstItem, self.view, @"Constraint's first item matches target");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeWidth, @"Constraint's first attribute matches target");
-    XCTAssertEqualObjects(constraint.secondItem, self.subview, @"Constraint's second item matches parameter");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeHeight, @"Constraint's second attribute matches parameter");
-    
-    XCTAssertEqual(constraint.relation, NSLayoutRelationEqual, @"Constraint has correct relation");
-    XCTAssertEqual(constraint.constant, 10.0, @"Constraint has correct constant");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityDefaultHigh, @"Constraint has correct priority");
-    
-    XCTAssertFalse([self.view.constraints containsObject:constraint], @"Does not add constraint");
+    XCTAssertFalse([self.view.constraints containsObject:constraint], @"-constraintForRelation:... does not add constraint");
     
     constraint = [self.subview.ul.height constraintForRelation:NSLayoutRelationGreaterThanOrEqual toAttribute:nil offset:20 priority:NSLayoutPriorityDefaultLow];
-    XCTAssertEqualObjects(constraint.firstItem, self.subview, @"Constraint's first item matches target");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeHeight, @"Constraint's first attribute matches target");
-    XCTAssertNil(constraint.secondItem, @"Constraint's second item is nil");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeNotAnAttribute, @"Constraint's second attribute is NotAnAttribute");
-    
-    XCTAssertEqual(constraint.relation, NSLayoutRelationGreaterThanOrEqual, @"Constraint has correct relation");
-    XCTAssertEqual(constraint.constant, 20.0, @"Constraint has correct constant");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityDefaultLow, @"Constraint has correct priority");
+    ULTAssertConstraintProperties(constraint, self.subview, NSLayoutAttributeHeight, nil, NSLayoutAttributeNotAnAttribute, NSLayoutRelationGreaterThanOrEqual, 20.0, NSLayoutPriorityDefaultLow, @"-constraintForRelation:... without second attribute");
 }
 
 - (void)testConstraintConstrainingTo {
     NSLayoutConstraint * constraint = [self.view.ul.width constraintConstrainingTo:self.subview.ul.height offset:10 priority:NSLayoutPriorityDefaultHigh];
-    
-    XCTAssertEqualObjects(constraint.firstItem, self.view, @"Constraint's first item matches target");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeWidth, @"Constraint's first attribute matches target");
-    XCTAssertEqualObjects(constraint.secondItem, self.subview, @"Constraint's second item matches parameter");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeHeight, @"Constraint's second attribute matches parameter");
-    
-    XCTAssertEqual(constraint.relation, NSLayoutRelationEqual, @"Constraint has correct relation");
-    XCTAssertEqual(constraint.constant, 10.0, @"Constraint has correct constant");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityDefaultHigh, @"Constraint has correct priority");
-    
-    XCTAssertFalse([self.view.constraints containsObject:constraint], @"Does not add constraint");
+    ULTAssertConstraintProperties(constraint, self.view, NSLayoutAttributeWidth, self.subview, NSLayoutAttributeHeight, NSLayoutRelationEqual, 10.0, NSLayoutPriorityDefaultHigh, @"-constraintConstrainingTo:...");
+        
+    XCTAssertFalse([self.view.constraints containsObject:constraint], @"-constraintConstrainingTo:... does not add constraint");
     
     constraint = [self.subview.ul.height constraintConstrainingDownTo:nil offset:20 priority:NSLayoutPriorityDefaultLow];
-    XCTAssertEqualObjects(constraint.firstItem, self.subview, @"Constraint's first item matches target");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeHeight, @"Constraint's first attribute matches target");
-    XCTAssertNil(constraint.secondItem, @"Constraint's second item is nil");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeNotAnAttribute, @"Constraint's second attribute is NotAnAttribute");
+    ULTAssertConstraintProperties(constraint, self.subview, NSLayoutAttributeHeight, nil, NSLayoutAttributeNotAnAttribute, NSLayoutRelationGreaterThanOrEqual, 20.0, NSLayoutPriorityDefaultLow, @"-constraintConstrainingDownTo:...");
     
-    XCTAssertEqual(constraint.relation, NSLayoutRelationGreaterThanOrEqual, @"Constraint has correct relation");
-    XCTAssertEqual(constraint.constant, 20.0, @"Constraint has correct constant");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityDefaultLow, @"Constraint has correct priority");
-
     constraint = [self.view.ul.height constraintConstrainingUpTo:self.view.ul.width offset:30 priority:NSLayoutPriorityRequired];
-    XCTAssertEqualObjects(constraint.firstItem, self.view, @"Constraint's first item matches target");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeHeight, @"Constraint's first attribute matches target");
-    XCTAssertEqualObjects(constraint.secondItem, self.view, @"Constraint's second item matches parameter");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeWidth, @"Constraint's second attribute matches parameter");
-    
-    XCTAssertEqual(constraint.relation, NSLayoutRelationLessThanOrEqual, @"Constraint has correct relation");
-    XCTAssertEqual(constraint.constant, 30.0, @"Constraint has correct constant");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityRequired, @"Constraint has correct priority");
+    ULTAssertConstraintProperties(constraint, self.view, NSLayoutAttributeHeight, self.view, NSLayoutAttributeWidth, NSLayoutRelationLessThanOrEqual, 30.0, NSLayoutPriorityRequired, @"-constraintConstrainingUpTo:...");
 }
 
 - (void)testConstrainToParams {
     NSLayoutConstraint * constraint = [self.view.ul.width constrainTo:self.subview.ul.height offset:10 priority:NSLayoutPriorityDefaultHigh];
-    
-    XCTAssertEqualObjects(constraint.firstItem, self.view, @"Constraint's first item matches target");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeWidth, @"Constraint's first attribute matches target");
-    XCTAssertEqualObjects(constraint.secondItem, self.subview, @"Constraint's second item matches parameter");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeHeight, @"Constraint's second attribute matches parameter");
-    
-    XCTAssertEqual(constraint.relation, NSLayoutRelationEqual, @"Constraint has correct relation");
-    XCTAssertEqual(constraint.constant, 10.0, @"Constraint has correct constant");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityDefaultHigh, @"Constraint has correct priority");
-    
-    XCTAssertTrue([self.view.constraints containsObject:constraint], @"Adds constraint");
+    ULTAssertConstraintProperties(constraint, self.view, NSLayoutAttributeWidth, self.subview, NSLayoutAttributeHeight, NSLayoutRelationEqual, 10.0, NSLayoutPriorityDefaultHigh, @"-constrainTo:...");
+    XCTAssertTrue([self.view.constraints containsObject:constraint], @"-constrainTo:... adds constraint");
     
     constraint = [self.subview.ul.height constrainDownTo:nil offset:20 priority:NSLayoutPriorityDefaultLow];
-    XCTAssertEqualObjects(constraint.firstItem, self.subview, @"Constraint's first item matches target");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeHeight, @"Constraint's first attribute matches target");
-    XCTAssertNil(constraint.secondItem, @"Constraint's second item is nil");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeNotAnAttribute, @"Constraint's second attribute is NotAnAttribute");
-    
-    XCTAssertEqual(constraint.relation, NSLayoutRelationGreaterThanOrEqual, @"Constraint has correct relation");
-    XCTAssertEqual(constraint.constant, 20.0, @"Constraint has correct constant");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityDefaultLow, @"Constraint has correct priority");
-    
-    XCTAssertTrue([self.subview.constraints containsObject:constraint], @"Adds constraint");
+    ULTAssertConstraintProperties(constraint, self.subview, NSLayoutAttributeHeight, nil, NSLayoutAttributeNotAnAttribute, NSLayoutRelationGreaterThanOrEqual, 20.0, NSLayoutPriorityDefaultLow, @"-constrainDownTo:...");
+    XCTAssertTrue([self.subview.constraints containsObject:constraint], @"-constrainDownTo:... adds constraint");
     
     constraint = [self.view.ul.height constrainUpTo:self.view.ul.width offset:30 priority:NSLayoutPriorityRequired];
-    XCTAssertEqualObjects(constraint.firstItem, self.view, @"Constraint's first item matches target");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeHeight, @"Constraint's first attribute matches target");
-    XCTAssertEqualObjects(constraint.secondItem, self.view, @"Constraint's second item matches parameter");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeWidth, @"Constraint's second attribute matches parameter");
-    
-    XCTAssertEqual(constraint.relation, NSLayoutRelationLessThanOrEqual, @"Constraint has correct relation");
-    XCTAssertEqual(constraint.constant, 30.0, @"Constraint has correct constant");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityRequired, @"Constraint has correct priority");
-    
-    XCTAssertTrue([self.view.constraints containsObject:constraint], @"Adds constraint");
+    ULTAssertConstraintProperties(constraint, self.view, NSLayoutAttributeHeight, self.view, NSLayoutAttributeWidth, NSLayoutRelationLessThanOrEqual, 30.0, NSLayoutPriorityRequired, @"-constrainUpTo:...");
+    XCTAssertTrue([self.view.constraints containsObject:constraint], @"-constrainUpTo:... adds constraint");
 }
 
 - (void)testConstrainToNoParams {
     NSLayoutConstraint * constraint = [self.view.ul.width constrainTo:self.subview.ul.height];
-    
-    XCTAssertEqualObjects(constraint.firstItem, self.view, @"Constraint's first item matches target");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeWidth, @"Constraint's first attribute matches target");
-    XCTAssertEqualObjects(constraint.secondItem, self.subview, @"Constraint's second item matches parameter");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeHeight, @"Constraint's second attribute matches parameter");
-    
-    XCTAssertEqual(constraint.relation, NSLayoutRelationEqual, @"Constraint has correct relation");
-    XCTAssertEqual(constraint.constant, 0.0, @"Constraint has correct constant");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityRequired, @"Constraint has correct priority");
-    
-    XCTAssertTrue([self.view.constraints containsObject:constraint], @"Adds constraint");
+    ULTAssertConstraintProperties(constraint, self.view, NSLayoutAttributeWidth, self.subview, NSLayoutAttributeHeight, NSLayoutRelationEqual, 0.0, NSLayoutPriorityRequired, @"-constrainTo:");
+    XCTAssertTrue([self.view.constraints containsObject:constraint], @"-constrainTo: adds constraint");
     
     constraint = [self.subview.ul.height constrainDownTo:nil];
-    XCTAssertEqualObjects(constraint.firstItem, self.subview, @"Constraint's first item matches target");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeHeight, @"Constraint's first attribute matches target");
-    XCTAssertNil(constraint.secondItem, @"Constraint's second item is nil");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeNotAnAttribute, @"Constraint's second attribute is NotAnAttribute");
-    
-    XCTAssertEqual(constraint.relation, NSLayoutRelationGreaterThanOrEqual, @"Constraint has correct relation");
-    XCTAssertEqual(constraint.constant, 0.0, @"Constraint has correct constant");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityRequired, @"Constraint has correct priority");
-    
-    XCTAssertTrue([self.subview.constraints containsObject:constraint], @"Adds constraint");
+    ULTAssertConstraintProperties(constraint, self.subview, NSLayoutAttributeHeight, nil, NSLayoutAttributeNotAnAttribute, NSLayoutRelationGreaterThanOrEqual, 0.0, NSLayoutPriorityRequired, @"-constrainDownTo:");
+    XCTAssertTrue([self.subview.constraints containsObject:constraint], @"-constrainDownTo: adds constraint");
     
     constraint = [self.view.ul.height constrainUpTo:self.view.ul.width];
-    XCTAssertEqualObjects(constraint.firstItem, self.view, @"Constraint's first item matches target");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeHeight, @"Constraint's first attribute matches target");
-    XCTAssertEqualObjects(constraint.secondItem, self.view, @"Constraint's second item matches parameter");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeWidth, @"Constraint's second attribute matches parameter");
-    
-    XCTAssertEqual(constraint.relation, NSLayoutRelationLessThanOrEqual, @"Constraint has correct relation");
-    XCTAssertEqual(constraint.constant, 0.0, @"Constraint has correct constant");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityRequired, @"Constraint has correct priority");
-    
-    XCTAssertTrue([self.view.constraints containsObject:constraint], @"Adds constraint");
+    ULTAssertConstraintProperties(constraint, self.view, NSLayoutAttributeHeight, self.view, NSLayoutAttributeWidth, NSLayoutRelationLessThanOrEqual, 0.0, NSLayoutPriorityRequired, @"-constrainUpTo:");
+    XCTAssertTrue([self.view.constraints containsObject:constraint], @"-constrainUpTo: adds constraint");
 }
 
 - (void)testConstrainToSuperviewParams {
     NSLayoutConstraint * constraint = [self.subview.ul.width constrainToSuperviewWithOffset:10 priority:NSLayoutPriorityDefaultHigh];
-    
-    XCTAssertEqualObjects(constraint.firstItem, self.subview, @"Constraint's first item matches target");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeWidth, @"Constraint's first attribute matches target");
-    XCTAssertEqualObjects(constraint.secondItem, self.view, @"Constraint's second item is superview");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeWidth, @"Constraint's second attribute matches target");
-    
-    XCTAssertEqual(constraint.relation, NSLayoutRelationEqual, @"Constraint has correct relation");
-    XCTAssertEqual(constraint.constant, 10.0, @"Constraint has correct constant");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityDefaultHigh, @"Constraint has correct priority");
-    
-    XCTAssertTrue([self.view.constraints containsObject:constraint], @"Adds constraint");
+    ULTAssertConstraintProperties(constraint, self.subview, NSLayoutAttributeWidth, self.view, NSLayoutAttributeWidth, NSLayoutRelationEqual, 10.0, NSLayoutPriorityDefaultHigh, @"-constrainToSuperviewWith...");
+    XCTAssertTrue([self.view.constraints containsObject:constraint], @"-constrainToSuperviewWith... adds constraint");
     
     constraint = [self.subview.ul.height constrainDownToSuperviewWithOffset:20 priority:NSLayoutPriorityDefaultLow];
-    XCTAssertEqualObjects(constraint.firstItem, self.subview, @"Constraint's first item matches target");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeHeight, @"Constraint's first attribute matches target");
-    XCTAssertEqualObjects(constraint.secondItem, self.view, @"Constraint's second item matches superview");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeHeight, @"Constraint's second attribute matches target attribute");
-    
-    XCTAssertEqual(constraint.relation, NSLayoutRelationGreaterThanOrEqual, @"Constraint has correct relation");
-    XCTAssertEqual(constraint.constant, 20.0, @"Constraint has correct constant");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityDefaultLow, @"Constraint has correct priority");
-    
-    XCTAssertTrue([self.view.constraints containsObject:constraint], @"Adds constraint");
+    ULTAssertConstraintProperties(constraint, self.subview, NSLayoutAttributeHeight, self.view, NSLayoutAttributeHeight, NSLayoutRelationGreaterThanOrEqual, 20.0, NSLayoutPriorityDefaultLow, @"-constrainDownToSuperviewWith...");
+    XCTAssertTrue([self.view.constraints containsObject:constraint], @"-constrainDownToSuperviewWith... adds constraint");
     
     constraint = [self.subview.ul.leading constrainUpToSuperviewWithOffset:30 priority:NSLayoutPriorityRequired];
-    XCTAssertEqualObjects(constraint.firstItem, self.subview, @"Constraint's first item matches target");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeLeading, @"Constraint's first attribute matches target");
-    XCTAssertEqualObjects(constraint.secondItem, self.view, @"Constraint's second item matches superview");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeLeading, @"Constraint's second attribute matches target attribute");
-    
-    XCTAssertEqual(constraint.relation, NSLayoutRelationLessThanOrEqual, @"Constraint has correct relation");
-    XCTAssertEqual(constraint.constant, 30.0, @"Constraint has correct constant");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityRequired, @"Constraint has correct priority");
-    
-    XCTAssertTrue([self.view.constraints containsObject:constraint], @"Adds constraint");
+    ULTAssertConstraintProperties(constraint, self.subview, NSLayoutAttributeLeading, self.view, NSLayoutAttributeLeading, NSLayoutRelationLessThanOrEqual, 30.0, NSLayoutPriorityRequired, @"-constrainUpToSuperviewWith...");
+    XCTAssertTrue([self.view.constraints containsObject:constraint], @"-constrainUpToSuperviewWith... adds constraint");
 }
 
 - (void)testConstrainToSuperviewNoParams {
     NSLayoutConstraint * constraint = [self.subview.ul.width constrainToSuperview];
-    
-    XCTAssertEqualObjects(constraint.firstItem, self.subview, @"Constraint's first item matches target");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeWidth, @"Constraint's first attribute matches target");
-    XCTAssertEqualObjects(constraint.secondItem, self.view, @"Constraint's second item is superview");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeWidth, @"Constraint's second attribute matches target");
-    
-    XCTAssertEqual(constraint.relation, NSLayoutRelationEqual, @"Constraint has correct relation");
-    XCTAssertEqual(constraint.constant, 0.0, @"Constraint has correct constant");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityRequired, @"Constraint has correct priority");
-    
-    XCTAssertTrue([self.view.constraints containsObject:constraint], @"Adds constraint");
+    ULTAssertConstraintProperties(constraint, self.subview, NSLayoutAttributeWidth, self.view, NSLayoutAttributeWidth, NSLayoutRelationEqual, 0.0, NSLayoutPriorityRequired, @"-constrainToSuperview");
+    XCTAssertTrue([self.view.constraints containsObject:constraint], @"-constrainToSuperview adds constraint");
     
     constraint = [self.subview.ul.height constrainDownToSuperview];
-    XCTAssertEqualObjects(constraint.firstItem, self.subview, @"Constraint's first item matches target");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeHeight, @"Constraint's first attribute matches target");
-    XCTAssertEqualObjects(constraint.secondItem, self.view, @"Constraint's second item matches superview");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeHeight, @"Constraint's second attribute matches target attribute");
-    
-    XCTAssertEqual(constraint.relation, NSLayoutRelationGreaterThanOrEqual, @"Constraint has correct relation");
-    XCTAssertEqual(constraint.constant, 0.0, @"Constraint has correct constant");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityRequired, @"Constraint has correct priority");
-    
-    XCTAssertTrue([self.view.constraints containsObject:constraint], @"Adds constraint");
+    ULTAssertConstraintProperties(constraint, self.subview, NSLayoutAttributeHeight, self.view, NSLayoutAttributeHeight, NSLayoutRelationGreaterThanOrEqual, 0.0, NSLayoutPriorityRequired, @"-constrainDownToSuperview");
+    XCTAssertTrue([self.view.constraints containsObject:constraint], @"-constrainDownToSuperview adds constraint");
     
     constraint = [self.subview.ul.leading constrainUpToSuperview];
-    XCTAssertEqualObjects(constraint.firstItem, self.subview, @"Constraint's first item matches target");
-    XCTAssertEqual(constraint.firstAttribute, NSLayoutAttributeLeading, @"Constraint's first attribute matches target");
-    XCTAssertEqualObjects(constraint.secondItem, self.view, @"Constraint's second item matches superview");
-    XCTAssertEqual(constraint.secondAttribute, NSLayoutAttributeLeading, @"Constraint's second attribute matches target attribute");
-    
-    XCTAssertEqual(constraint.relation, NSLayoutRelationLessThanOrEqual, @"Constraint has correct relation");
-    XCTAssertEqual(constraint.constant, 0.0, @"Constraint has correct constant");
-    XCTAssertEqual(constraint.priority, NSLayoutPriorityRequired, @"Constraint has correct priority");
-    
-    XCTAssertTrue([self.view.constraints containsObject:constraint], @"Adds constraint");
+    ULTAssertConstraintProperties(constraint, self.subview, NSLayoutAttributeLeading, self.view, NSLayoutAttributeLeading, NSLayoutRelationLessThanOrEqual, 0.0, NSLayoutPriorityRequired, @"-constrainUpToSuperview");
+    XCTAssertTrue([self.view.constraints containsObject:constraint], @"-constrainUpToSuperview adds constraint");
 }
 
 @end
