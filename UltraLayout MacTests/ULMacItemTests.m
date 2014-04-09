@@ -40,7 +40,7 @@
 #define ULTAssertItemPropertyOK(property, layoutAttribute, expectedClass) \
     XCTAssertNotNil(self.view.ul.property, @"ULItem." #property " not nil"); \
     XCTAssertTrue([self.view.ul.property isKindOfClass:expectedClass.class], @"ULItem." #property " is a " #expectedClass); \
-    XCTAssertEqual(self.view.ul.property.attribute, layoutAttribute, @"ULItem." #property ".attribute is " #layoutAttribute) \
+    XCTAssertEqual(self.view.ul.property.attribute, (NSLayoutAttribute)layoutAttribute, @"ULItem." #property ".attribute is " #layoutAttribute) \
 
 - (void)testAttributesAsExpected {
     ULTAssertItemPropertyOK(left, NSLayoutAttributeLeft, ULXPositionAttribute);
